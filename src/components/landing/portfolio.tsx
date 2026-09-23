@@ -60,7 +60,7 @@ export function Portfolio() {
                   alt={project.alt}
                   loading="lazy"
                   decoding="async"
-                  className="aspect-[4/3] w-full rounded-lg bg-ink-muted/10 object-cover"
+                  className="aspect-[4/3] w-full rounded-lg bg-ink-muted/10 object-contain"
                 />
                 <figcaption className="mt-2.5 text-sm text-ink-muted">{project.caption}</figcaption>
               </figure>
