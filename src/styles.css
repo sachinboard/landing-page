@@ -150,7 +150,7 @@
 }
 
 .marquee-track {
-  animation: marquee-scroll 38s linear infinite;
+  animation: marquee-scroll 70s linear infinite;
 }
 
 .marquee:hover .marquee-track {
