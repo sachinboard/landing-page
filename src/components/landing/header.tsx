@@ -1,6 +1,5 @@
-import { MessageCircle } from "lucide-react";
-
 import logo from "@/assets/logo-wordmark.webp";
+import { WhatsAppIcon } from "@/components/landing/whatsapp-icon";
 import { PhoneLink } from "@/components/landing/cta";
 import { whatsappHref } from "@/lib/business";
 import { trackEvent } from "@/lib/tracking";
@@ -29,7 +28,7 @@ export function Header() {
             title="Message us on WhatsApp"
             className="grid size-11 place-items-center rounded-md bg-brand text-brand-foreground transition-colors hover:bg-brand/85"
           >
-            <MessageCircle aria-hidden="true" className="size-5" />
+            <WhatsAppIcon className="size-5" />
           </a>
         </div>
       </div>

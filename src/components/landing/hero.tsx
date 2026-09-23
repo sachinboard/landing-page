@@ -1,9 +1,8 @@
-import { BadgeCheck, MapPin } from "lucide-react";
+import { BadgeCheck, Check, MapPin } from "lucide-react";
 
 import { BrandMarquee } from "@/components/landing/brand-marquee";
 import { GoogleRating } from "@/components/landing/google-rating";
 import { HeroQuoteForm } from "@/components/landing/hero-quote-form";
-import { WhatsAppButton } from "@/components/landing/cta";
 import { BUSINESS } from "@/lib/business";
 
 export function Hero() {
@@ -27,11 +26,19 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="mt-5 max-w-lg text-base leading-relaxed text-ink-muted sm:text-lg">
-            Design, manufacturing and installation handled end to end from our 5,000 sq. ft. facility
-            in Bengaluru — LED, 3D, acrylic, channel letters and digital displays, built to your
-            brand.
-          </p>
+          <ul className="mt-5 max-w-lg space-y-2.5 text-base leading-relaxed text-ink-muted sm:text-lg">
+            {[
+              "Design, manufacturing and installation handled end to end",
+              "Made in our own 5,000 sq. ft. facility in Bengaluru",
+              "LED, 3D, acrylic, channel letters and digital displays",
+              "Built to match your brand exactly",
+            ].map((point) => (
+              <li key={point} className="flex gap-2.5">
+                <Check aria-hidden="true" className="mt-1 size-4 shrink-0 text-brand" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
 
           <GoogleRating />
 
@@ -40,11 +47,7 @@ export function Hero() {
           </p>
           <BrandMarquee />
 
-          <div className="mt-7">
-            <WhatsAppButton location="hero" className="px-6 py-3.5 text-base" />
-          </div>
-
-          <p className="mt-5 text-sm text-ink-muted">
+          <p className="mt-7 text-sm text-ink-muted">
             5-year unconditional warranty · Service issues resolved in 48–72 hours
           </p>
         </div>
