@@ -77,7 +77,7 @@ export function Services() {
                 alt={service.alt}
                 loading="lazy"
                 decoding="async"
-                className="aspect-[4/3] w-full bg-muted object-cover"
+                className="aspect-[4/3] w-full bg-muted object-contain"
               />
               <div className="p-5">
                 <h3 className="font-display text-lg text-ink">{service.title}</h3>

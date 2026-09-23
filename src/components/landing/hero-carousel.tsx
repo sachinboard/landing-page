@@ -77,7 +77,7 @@ export function HeroCarousel() {
                 loading={slideIndex === 0 ? "eager" : "lazy"}
                 fetchPriority={slideIndex === 0 ? "high" : "low"}
                 decoding="async"
-                className="aspect-[4/5] w-full object-cover"
+                className="aspect-[4/5] w-full bg-ink object-contain"
               />
             </div>
           ))}
