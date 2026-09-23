@@ -1,8 +1,8 @@
 import svc3d from "@/assets/svc-3d.jpg";
 import svc2d from "@/assets/svc-2d.png";
-import svcChannel from "@/assets/svc-channel.png";
-import svcLightbox from "@/assets/proj-backlit.webp";
-import svcVideoBoard from "@/assets/svc-videoboard.webp";
+import svcChannel from "@/assets/proj-channel.webp";
+import svcLetters from "@/assets/svc-videoboard.webp";
+import svcLightbox from "@/assets/proj-1.webp";
 import svcVideoWall from "@/assets/svc-videowall.webp";
 import { QuoteButton } from "@/components/landing/cta";
 
@@ -10,40 +10,40 @@ const SERVICES = [
   {
     title: "3D Sign Boards",
     image: svc3d,
-    alt: "Green 3D sign board with raised gold letters installed outside Dizzy Duck",
+    alt: "Green 3D sign board with raised gold letters installed outside Dizzy Duck in Bengaluru",
     useCase:
       "For restaurants, cafés and retail stores that need depth and presence on a busy main road.",
   },
   {
     title: "2D LED Sign Boards",
     image: svc2d,
-    alt: "Purple 2D LED sign board with illuminated logo and artwork for Chill'd Monk",
+    alt: "Purple 2D LED sign board with illuminated logo artwork for Chill'd Monk ice cream",
     useCase:
       "For shops, clinics and offices wanting a clean, bright name board that reads well day and night.",
   },
   {
     title: "3D Aluminium Channel Letters",
     image: svcChannel,
-    alt: "Illuminated aluminium channel letter sign board reading Gilly's Super Bar",
+    alt: "Aluminium channel letters in production, showing the built-up letter sides before assembly",
     useCase:
-      "For bars, showrooms and malls where individual glowing letters give a premium finish.",
+      "For bars, showrooms and malls where individual built-up letters give a premium finish.",
   },
   {
-    title: "Fabric Backlit Lightbox",
+    title: "Backlit LED Letter Signs",
+    image: svcLetters,
+    alt: "Backlit LED letter signage glowing green and blue at night for Tree Suites",
+    useCase:
+      "For hotels, gyms and service businesses that need their name visible after dark.",
+  },
+  {
+    title: "Backlit Lightboxes",
     image: svcLightbox,
-    alt: "Fabric backlit lightbox displaying a dental clinic advertisement",
+    alt: "Oval backlit lightbox sign board with the Chai.in logo mounted on an exterior wall",
     useCase:
-      "For clinics, salons and mall units that need large, seamless backlit graphics indoors.",
+      "For clinics, salons and mall units that need a compact, evenly lit logo board.",
   },
   {
-    title: "Digital Video Boards",
-    image: svcVideoBoard,
-    alt: "Illuminated acrylic board with glowing green and white lettering for Tree Suites",
-    useCase:
-      "For hotels, showrooms and hospitality brands running changing offers and announcements.",
-  },
-  {
-    title: "Video Walls & LED Displays",
+    title: "Digital Video Boards & Video Walls",
     image: svcVideoWall,
     alt: "Large illuminated LED display board for a Go Kart entertainment venue at night",
     useCase:
