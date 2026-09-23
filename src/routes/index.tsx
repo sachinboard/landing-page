@@ -1,24 +1,97 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { Header } from "@/components/landing/header";
+import { Hero } from "@/components/landing/hero";
+import { TrustStrip } from "@/components/landing/trust-strip";
+import { Services } from "@/components/landing/services";
+import { WhyUs } from "@/components/landing/why-us";
+import { Portfolio } from "@/components/landing/portfolio";
+import { Process } from "@/components/landing/process";
+import { QuoteForm } from "@/components/landing/quote-form";
+import { Faq, FAQS } from "@/components/landing/faq";
+import { FinalCta } from "@/components/landing/final-cta";
+import { Footer } from "@/components/landing/footer";
+import { StickyCta } from "@/components/landing/sticky-cta";
+import { BUSINESS } from "@/lib/business";
+
+const TITLE = "Custom LED & 3D Sign Boards in Bengaluru | The Board Company";
+const DESCRIPTION =
+  "ISO 9001:2005 certified sign board manufacturer in Bengaluru. Custom 3D, LED, acrylic and channel letter signage — designed, made and installed in-house. Get a free quote.";
+
+// Structured data mirrors only what is stated on this page and published by the business.
+const STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      name: BUSINESS.name,
+      url: BUSINESS.website,
+      telephone: BUSINESS.phoneDisplay,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: BUSINESS.address.line1,
+        addressLocality: "Bengaluru",
+        postalCode: "560094",
+        addressRegion: "Karnataka",
+        addressCountry: "IN",
+      },
+      areaServed: BUSINESS.serviceArea,
+      sameAs: [BUSINESS.facebook, BUSINESS.instagram],
+      openingHours: "Mo-Su 09:00-17:00",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: FAQS.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    },
+  ],
+};
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;600;700;800&display=swap",
+      },
+    ],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(STRUCTURED_DATA) },
+    ],
+  }),
+  component: LandingPage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function LandingPage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="pb-[4.5rem] md:pb-0">
+      <Header />
+      <main>
+        <Hero />
+        <TrustStrip />
+        <Services />
+        <WhyUs />
+        <Portfolio />
+        <Process />
+        <QuoteForm />
+        <Faq />
+        <FinalCta />
+      </main>
+      <Footer />
+      <StickyCta />
     </div>
   );
 }
