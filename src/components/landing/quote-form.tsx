@@ -278,8 +278,8 @@ function FieldLabel({
 }: {
   id: string;
   label: string;
-  required?: boolean;
-  optional?: boolean;
+  required?: boolean | undefined;
+  optional?: boolean | undefined;
 }) {
   return (
     <label htmlFor={id} className="block text-sm font-bold text-ink">
@@ -309,13 +309,13 @@ function TextField({
   label: string;
   value: string;
   onChange: (value: string) => void;
-  error?: string;
-  required?: boolean;
-  optional?: boolean;
-  type?: string;
-  inputMode?: "tel" | "email" | "text";
-  placeholder?: string;
-  autoComplete?: string;
+  error?: string | undefined;
+  required?: boolean | undefined;
+  optional?: boolean | undefined;
+  type?: string | undefined;
+  inputMode?: "tel" | "email" | "text" | undefined;
+  placeholder?: string | undefined;
+  autoComplete?: string | undefined;
 }) {
   return (
     <div className="min-w-0">
@@ -356,9 +356,9 @@ function SelectField({
   onChange: (value: string) => void;
   options: string[];
   placeholder: string;
-  error?: string;
-  required?: boolean;
-  optional?: boolean;
+  error?: string | undefined;
+  required?: boolean | undefined;
+  optional?: boolean | undefined;
 }) {
   return (
     <div className="min-w-0">
