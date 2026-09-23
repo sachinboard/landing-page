@@ -14,7 +14,72 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      quote_leads: {
+        Row: {
+          budget_range: string | null
+          business_location: string | null
+          business_name: string
+          created_at: string
+          email: string | null
+          fbclid: string | null
+          full_name: string
+          gclid: string | null
+          id: string
+          page_url: string | null
+          phone: string
+          project_timeline: string | null
+          referrer: string | null
+          signage_requirement: string
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+        }
+        Insert: {
+          budget_range?: string | null
+          business_location?: string | null
+          business_name: string
+          created_at?: string
+          email?: string | null
+          fbclid?: string | null
+          full_name: string
+          gclid?: string | null
+          id?: string
+          page_url?: string | null
+          phone: string
+          project_timeline?: string | null
+          referrer?: string | null
+          signage_requirement: string
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Update: {
+          budget_range?: string | null
+          business_location?: string | null
+          business_name?: string
+          created_at?: string
+          email?: string | null
+          fbclid?: string | null
+          full_name?: string
+          gclid?: string | null
+          id?: string
+          page_url?: string | null
+          phone?: string
+          project_timeline?: string | null
+          referrer?: string | null
+          signage_requirement?: string
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
