@@ -1,6 +1,6 @@
 import { BadgeCheck, MapPin } from "lucide-react";
 
-import heroImage from "@/assets/svc-3d.jpg";
+import { HeroCarousel } from "@/components/landing/hero-carousel";
 import { QuoteButton, WhatsAppButton } from "@/components/landing/cta";
 import { BUSINESS } from "@/lib/business";
 
@@ -39,18 +39,7 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="min-w-0">
-          <img
-            src={heroImage}
-            alt="Illuminated 3D sign board with gold letters manufactured and installed for Dizzy Duck in Bengaluru"
-            width={620}
-            height={827}
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            className="aspect-[4/5] w-full rounded-lg object-cover shadow-2xl md:aspect-[4/5]"
-          />
-        </div>
+        <HeroCarousel />
       </div>
     </section>
   );
