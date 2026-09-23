@@ -18,12 +18,14 @@ export function Hero() {
             </span>
           </p>
 
-          <h1 className="font-display mt-5 text-4xl leading-[1.12] sm:text-5xl lg:text-6xl">
-            <span className="block">Custom sign boards that make your storefront</span>
-            <span className="mt-3 block leading-[1.2] sm:mt-4">
+          <h1 className="font-display mt-5 max-w-xl text-4xl leading-[1.12] sm:text-[2.75rem] lg:text-5xl">
+            <span className="block">Custom sign boards that make</span>
+            <span className="block">your storefront</span>
+            <span className="mt-3 block leading-[1.2]">
               <span className="highlight-mark text-brand-foreground">impossible to miss</span>
             </span>
           </h1>
+
 
           <p className="mt-5 max-w-lg text-base leading-relaxed text-ink-muted sm:text-lg">
             Design, manufacturing and installation handled end to end from our 5,000 sq. ft. facility
