@@ -11,8 +11,8 @@
  */
 
 @theme inline {
-  --font-display: "Anton", "Arial Narrow", sans-serif;
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
   --color-ink-muted: var(--ink-muted);
@@ -129,10 +129,10 @@
 
 @utility font-display {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: 0.005em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
-  line-height: 0.95;
+  line-height: 1.05;
 }
 
 /* Thick highlighter stroke behind a word, echoing the brand wordmark. */
