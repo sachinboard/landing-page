@@ -1,40 +1,40 @@
-import proj1 from "@/assets/proj-1.webp";
-import proj2 from "@/assets/proj-3.webp";
-import proj3 from "@/assets/proj-2d.webp";
-import proj4 from "@/assets/proj-channel.webp";
-import proj5 from "@/assets/proj-backlit.webp";
-import proj6 from "@/assets/svc-videoled.webp";
+import projGym from "@/assets/proj-3.webp";
+import projPet from "@/assets/proj-2d.webp";
+import projCafe from "@/assets/svc-videoled.webp";
+import projBar from "@/assets/svc-channel.png";
+import projMonk from "@/assets/svc-2d.png";
+import projDuck from "@/assets/svc-3d.jpg";
 
 const PROJECTS = [
   {
-    image: proj1,
-    alt: "Illuminated sign board installed at Chai.in outlet in Bengaluru",
-    caption: "Chai.in — illuminated storefront name board",
+    image: projGym,
+    alt: "Gold's Gym interior wall with large yellow 3D letters reading Can't Stop Won't Stop",
+    caption: "Gold's Gym — interior 3D wall lettering",
   },
   {
-    image: proj2,
-    alt: "Custom signage installed for Tug of Fur pet grooming studio",
-    caption: "Tug of Fur — retail storefront signage",
+    image: projPet,
+    alt: "Black storefront sign board with white letters for Tug of Fur pet store and spa",
+    caption: "Tug of Fur — storefront name board",
   },
   {
-    image: proj3,
-    alt: "2D LED sign board with illuminated logo for Chill'd Monk",
+    image: projCafe,
+    alt: "Illuminated backlit sign board for Goofy's Cafe glowing at night",
+    caption: "Goofy's Cafe — backlit board with LED accents",
+  },
+  {
+    image: projBar,
+    alt: "Illuminated channel letter sign board reading Gilly's Super Bar in red and blue",
+    caption: "Gilly's Super Bar — illuminated letter signage",
+  },
+  {
+    image: projMonk,
+    alt: "Purple 2D LED sign board with illuminated ice cream artwork for Chill'd Monk",
     caption: "Chill'd Monk — 2D LED sign board",
   },
   {
-    image: proj4,
-    alt: "Aluminium channel letter signage reading Gilly's Super Bar",
-    caption: "Gilly's Super Bar — 3D aluminium channel letters",
-  },
-  {
-    image: proj5,
-    alt: "Fabric backlit lightbox for a dental clinic",
-    caption: "Dental clinic — fabric backlit lightbox",
-  },
-  {
-    image: proj6,
-    alt: "Illuminated acrylic sign board with glowing letters for Goofy's Cafe",
-    caption: "Goofy's Cafe — illuminated acrylic board",
+    image: projDuck,
+    alt: "Green 3D sign board with raised gold letters for Dizzy Duck",
+    caption: "Dizzy Duck — 3D sign board",
   },
 ];
 
