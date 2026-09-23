@@ -137,15 +137,9 @@
 
 /* Thick highlighter stroke behind a word, echoing the brand wordmark. */
 @utility highlight-mark {
-  position: relative;
-  display: inline-block;
-  isolation: isolate;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 4% -0.12em 8% -0.12em;
-    background: var(--color-brand);
-    z-index: -1;
-  }
+  display: inline;
+  background: var(--color-brand);
+  padding: 0.1em 0.14em 0.06em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
