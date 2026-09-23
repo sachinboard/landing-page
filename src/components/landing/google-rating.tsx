@@ -7,7 +7,7 @@ export function GoogleRating() {
   if (!GOOGLE_REVIEWS) return null;
 
   const { rating, count, profileUrl } = GOOGLE_REVIEWS;
-  const full = Math.floor(rating);
+  const full = Math.round(rating);
 
   const content = (
     <>

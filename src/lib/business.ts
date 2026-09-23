@@ -30,7 +30,10 @@ export const whatsappHref = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURI
  * Verified Google review data. Left as null until the business confirms the
  * live star rating and review count — nothing is displayed while it is null.
  */
-export const GOOGLE_REVIEWS: { rating: number; count: string; profileUrl?: string } | null = null;
+export const GOOGLE_REVIEWS: { rating: number; count: string; profileUrl?: string } | null = {
+  rating: 4.9,
+  count: "330",
+};
 
 /** Client brands named on theboardcompany.in. Text only — no logo files supplied. */
 export const BRAND_CLIENTS = [
