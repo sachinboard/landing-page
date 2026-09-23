@@ -1,9 +1,9 @@
-import svc3d from "@/assets/svc-3d.jpg";
-import svc2d from "@/assets/svc-2d.png";
-import svcChannel from "@/assets/proj-channel.webp";
-import svcLetters from "@/assets/svc-videoboard.webp";
-import svcLightbox from "@/assets/proj-1.webp";
-import svcVideoWall from "@/assets/svc-videowall.webp";
+import svc3d from "@/assets/ls-svc-3d.jpg";
+import svc2d from "@/assets/ls-svc-2d.jpg";
+import svcChannel from "@/assets/ls-proj-channel.jpg";
+import svcLetters from "@/assets/ls-svc-videoboard.jpg";
+import svcLightbox from "@/assets/ls-proj-1.jpg";
+import svcVideoWall from "@/assets/ls-svc-videowall.jpg";
 import { QuoteButton } from "@/components/landing/cta";
 
 const SERVICES = [
@@ -77,7 +77,7 @@ export function Services() {
                 alt={service.alt}
                 loading="lazy"
                 decoding="async"
-                className="aspect-[4/3] w-full bg-muted object-contain"
+                className="aspect-[4/3] w-full bg-muted object-cover"
               />
               <div className="p-5">
                 <h3 className="font-display text-lg text-ink">{service.title}</h3>

@@ -1,9 +1,9 @@
-import projGym from "@/assets/proj-3.webp";
-import projPet from "@/assets/proj-2d.webp";
-import projCafe from "@/assets/svc-videoled.webp";
-import projBar from "@/assets/svc-channel.png";
-import projMonk from "@/assets/svc-2d.png";
-import projDuck from "@/assets/svc-3d.jpg";
+import projGym from "@/assets/ls-proj-3.jpg";
+import projPet from "@/assets/ls-proj-2d.jpg";
+import projCafe from "@/assets/ls-svc-videoled.jpg";
+import projBar from "@/assets/ls-svc-channel.jpg";
+import projMonk from "@/assets/ls-svc-2d.jpg";
+import projDuck from "@/assets/ls-svc-3d.jpg";
 
 const PROJECTS = [
   {
@@ -60,7 +60,7 @@ export function Portfolio() {
                   alt={project.alt}
                   loading="lazy"
                   decoding="async"
-                  className="aspect-[4/3] w-full rounded-lg bg-ink-muted/10 object-contain"
+                  className="aspect-[4/3] w-full rounded-lg bg-ink-muted/10 object-cover"
                 />
                 <figcaption className="mt-2.5 text-sm text-ink-muted">{project.caption}</figcaption>
               </figure>
