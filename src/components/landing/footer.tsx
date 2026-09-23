@@ -13,7 +13,7 @@ export function Footer() {
             width={200}
             height={65}
             loading="lazy"
-            className="h-9 w-auto brightness-0 invert"
+            className="h-12 w-auto rounded bg-background px-3 py-1.5"
           />
           <p className="mt-4 text-sm text-ink-muted">
             Sign board manufacturing, design and installation in {BUSINESS.city}. ISO 9001:2005
