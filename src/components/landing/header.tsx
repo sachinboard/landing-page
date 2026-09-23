@@ -1,5 +1,9 @@
+import { MessageCircle } from "lucide-react";
+
 import logo from "@/assets/logo-wordmark.webp";
-import { QuoteButton, PhoneLink } from "@/components/landing/cta";
+import { PhoneLink } from "@/components/landing/cta";
+import { whatsappHref } from "@/lib/business";
+import { trackEvent } from "@/lib/tracking";
 
 export function Header() {
   return (
@@ -16,7 +20,17 @@ export function Header() {
         </a>
         <div className="flex shrink-0 items-center gap-4">
           <PhoneLink location="header" className="hidden text-sm text-ink lg:inline-flex" />
-          <QuoteButton location="header" className="px-4 py-2.5 text-xs sm:text-sm" />
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent("whatsapp_click", { location: "header" })}
+            aria-label="Message us on WhatsApp"
+            title="Message us on WhatsApp"
+            className="grid size-11 place-items-center rounded-md bg-brand text-brand-foreground transition-colors hover:bg-brand/85"
+          >
+            <MessageCircle aria-hidden="true" className="size-5" />
+          </a>
         </div>
       </div>
     </header>
