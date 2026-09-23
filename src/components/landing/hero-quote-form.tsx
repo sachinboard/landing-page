@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 type Field = "fullName" | "email" | "brand" | "size" | "signageType";
 type Values = Record<Field, string>;
-type Errors = Partial<Record<Field, string>> & { terms?: string };
+type Errors = Partial<Record<Field, string>> & { terms?: string | undefined };
 
 const EMPTY: Values = { fullName: "", email: "", brand: "", size: "", signageType: "" };
 
