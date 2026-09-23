@@ -26,6 +26,40 @@ export const whatsappHref = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURI
   BUSINESS.whatsappMessage,
 )}`;
 
+/**
+ * Verified Google review data. Left as null until the business confirms the
+ * live star rating and review count — nothing is displayed while it is null.
+ */
+export const GOOGLE_REVIEWS: { rating: number; count: string; profileUrl?: string } | null = null;
+
+/** Client brands named on theboardcompany.in. Text only — no logo files supplied. */
+export const BRAND_CLIENTS = [
+  "Gold's Gym",
+  "Fabric Spa",
+  "Spin Salon",
+  "Ginza",
+  "Sky Garden",
+  "Gilly's",
+  "Clark's Inn",
+  "1966 The Mumbai Cafe",
+  "Tea Day",
+  "Bublee",
+  "Hole In The Wall Cafe",
+  "Dizzy Duck",
+  "Tug of Fur",
+  "Tree Suites",
+] as const;
+
+/** Types offered in the hero quote form. */
+export const HERO_SIGNAGE_TYPES = [
+  "3D Acrylic",
+  "LED Backlight Flex",
+  "3D Letters on MS Frame",
+  "Fabric Board",
+  "Mixed Board",
+  "Need Consultation",
+] as const;
+
 export const SIGNAGE_OPTIONS = [
   "3D Sign Board",
   "2D LED Sign Board",
