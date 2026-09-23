@@ -1,35 +1,34 @@
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import dizzyDuck from "@/assets/dizzy-duck.png.asset.json";
-import shot3d from "@/assets/svc-3d.jpg";
-import shotProj1 from "@/assets/proj-1.webp";
-import shotChannel from "@/assets/proj-channel.webp";
-import shotAcrylic from "@/assets/svc-videoled.webp";
+import shotDuck from "@/assets/ls-dizzy-duck.jpg";
+import shotGym from "@/assets/ls-proj-3.jpg";
+import shotPet from "@/assets/ls-proj-2d.jpg";
+import shotLetters from "@/assets/ls-svc-videoboard.jpg";
+import shotVideoWall from "@/assets/ls-svc-videowall.jpg";
 
 const SLIDES: { src: string; alt: string }[] = [
   {
-    src: dizzyDuck.url,
+    src: shotDuck,
     alt: "3D gold channel letter sign board installed for Dizzy Duck restaurant in Bengaluru",
   },
   {
-    src: shot3d,
-    alt: "Illuminated 3D sign board with gold lettering on a green fascia",
+    src: shotGym,
+    alt: "Large yellow 3D wall lettering installed inside Gold's Gym",
   },
   {
-    src: shotProj1,
-    alt: "Custom storefront sign board manufactured and installed in Bengaluru",
+    src: shotPet,
+    alt: "Black storefront sign board with white letters for Tug of Fur pet store and spa",
   },
   {
-    src: shotChannel,
-    alt: "Aluminium channel letter signage fitted on a building facade",
+    src: shotLetters,
+    alt: "Backlit LED letter signage glowing green and blue at night for Tree Suites",
   },
   {
-    src: shotAcrylic,
-    alt: "Backlit acrylic sign board for a cafe storefront",
+    src: shotVideoWall,
+    alt: "Large illuminated LED display board for a Go Kart entertainment venue at night",
   },
 ];
-
 export function HeroCarousel() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -72,12 +71,12 @@ export function HeroCarousel() {
               <img
                 src={slide.src}
                 alt={slide.alt}
-                width={620}
-                height={775}
+                width={1200}
+                height={900}
                 loading={slideIndex === 0 ? "eager" : "lazy"}
                 fetchPriority={slideIndex === 0 ? "high" : "low"}
                 decoding="async"
-                className="aspect-[4/5] w-full bg-ink object-contain"
+                className="aspect-[4/3] w-full bg-ink object-cover"
               />
             </div>
           ))}
