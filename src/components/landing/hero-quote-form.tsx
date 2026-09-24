@@ -18,7 +18,7 @@ const labelClass = "block text-sm font-bold text-ink";
 
 export function HeroQuoteForm() {
   const [values, setValues] = useState<Values>(EMPTY);
-  const [accepted, setAccepted] = useState(false);
+  const [accepted, setAccepted] = useState(true);
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const startedRef = useRef(false);
@@ -92,7 +92,7 @@ export function HeroQuoteForm() {
       <div className="rounded-xl bg-background p-6 text-center shadow-2xl sm:p-8">
         <CheckCircle2 aria-hidden="true" className="mx-auto size-12 text-brand-deep" />
         <h2 className="font-display mt-4 text-2xl text-ink" role="status">
-          Thank you — your request is in
+          Thank you - your request is in
         </h2>
         <p className="mt-3 text-sm text-muted-foreground">
           Our team will review your requirement and get back to you with advice and a quotation.
@@ -146,7 +146,7 @@ export function HeroQuoteForm() {
           <FieldError id="hero-phone-error" message={errors.phone} />
         </div>
 
-        <div className="min-w-0">
+        <div className="min-w-0 sm:col-span-2">
           <label htmlFor="hero-email" className={labelClass}>
             Email <span className="text-destructive">*</span>
           </label>
@@ -224,7 +224,7 @@ export function HeroQuoteForm() {
           <FieldError id="hero-signageType-error" message={errors.signageType} />
         </div>
 
-        {/* Honeypot — hidden from users, filled only by bots. */}
+        {/* Honeypot - hidden from users, filled only by bots. */}
         <div aria-hidden="true" className="hidden">
           <label htmlFor="hero_company_website">Company website</label>
           <input

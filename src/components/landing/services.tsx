@@ -75,16 +75,16 @@ export function Services() {
         <Carousel opts={{ align: "start", loop: true }} className="mt-10 px-1 md:px-12">
           <CarouselContent>
             {SERVICES.map((service) => (
-              <CarouselItem key={service.title} className="basis-[90%] sm:basis-1/2">
-                <article className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+              <CarouselItem key={service.title} className="basis-[85%] md:basis-[45%]">
+                <article className="flex h-full flex-row overflow-hidden rounded-xl border border-border bg-card shadow-sm">
                   <img
                     src={service.image}
                     alt={service.alt}
                     loading="lazy"
                     decoding="async"
-                    className="aspect-[16/10] w-full bg-muted object-cover"
+                    className="w-2/5 shrink-0 self-stretch bg-muted object-cover min-h-[200px]"
                   />
-                  <div className="flex flex-1 flex-col p-6 md:p-7">
+                  <div className="flex flex-1 flex-col justify-center p-5 md:p-6">
                     <h3 className="font-display text-xl text-ink md:text-2xl">{service.title}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
                       {service.useCase}

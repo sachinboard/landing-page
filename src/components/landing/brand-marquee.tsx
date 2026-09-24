@@ -23,7 +23,7 @@ const LOGOS = [
   { name: "Gold's Gym", src: goldsGym.url },
   { name: "Fabric Spa", src: fabricSpa.url },
   { name: "Sky Garden", src: skyGarden.url },
-  // Single-colour black logo — inverted so it reads on the dark banner.
+  // Single-colour black logo - inverted so it reads on the dark banner.
   { name: "Ginza", src: ginza.url, invert: true },
   { name: "1966 The Mumbai Cafe", src: mumbaiCafe.url },
   { name: "Skygarden Bar & Kitchen", src: skygardenBar.url },

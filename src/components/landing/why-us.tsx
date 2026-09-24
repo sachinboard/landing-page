@@ -4,7 +4,7 @@ const REASONS = [
   {
     icon: BadgeCheck,
     title: "ISO 9001:2005 certified",
-    body: "Quality-certified manufacturing processes — the certification The Board Company holds for its signage production in Bangalore.",
+    body: "Quality-certified manufacturing processes - the certification The Board Company holds for its signage production in Bangalore.",
   },
   {
     icon: Factory,
@@ -29,7 +29,7 @@ const REASONS = [
   {
     icon: Factory,
     title: "Built on 2,000+ projects",
-    body: "Since 2020 — after two years of R&D — we have completed over 2,000 signage projects for brands across Bengaluru.",
+    body: "Since 2020 - after two years of R&D - we have completed over 2,000 signage projects for brands across Bengaluru.",
   },
 ];
 

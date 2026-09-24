@@ -28,14 +28,14 @@ export const whatsappHref = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURI
 
 /**
  * Verified Google review data. Left as null until the business confirms the
- * live star rating and review count — nothing is displayed while it is null.
+ * live star rating and review count - nothing is displayed while it is null.
  */
 export const GOOGLE_REVIEWS: { rating: number; count: string; profileUrl?: string } | null = {
   rating: 4.9,
   count: "330",
 };
 
-/** Client brands named on theboardcompany.in. Text only — no logo files supplied. */
+/** Client brands named on theboardcompany.in. Text only - no logo files supplied. */
 export const BRAND_CLIENTS = [
   "Gold's Gym",
   "Fabric Spa",
@@ -71,7 +71,7 @@ export const SIGNAGE_OPTIONS = [
   "Digital Video Board",
   "Video Wall",
   "Neon Sign",
-  "Not sure — need advice",
+  "Not sure - need advice",
 ] as const;
 
 export const TIMELINE_OPTIONS = [

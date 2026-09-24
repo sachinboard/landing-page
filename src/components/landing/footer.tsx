@@ -62,11 +62,11 @@ export function Footer() {
             </li>
             <li>
               {/* Placeholder: replace with the published Privacy Policy URL. */}
-              <span className="text-ink-muted/70">Privacy Policy — coming soon</span>
+              <span className="text-ink-muted/70">Privacy Policy - coming soon</span>
             </li>
             <li>
               {/* Placeholder: replace with the published Terms URL. */}
-              <span className="text-ink-muted/70">Terms of Service — coming soon</span>
+              <span className="text-ink-muted/70">Terms of Service - coming soon</span>
             </li>
           </ul>
         </div>

@@ -120,7 +120,7 @@ export function QuoteForm() {
         <div className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6 md:py-24">
           <CheckCircle2 aria-hidden="true" className="mx-auto size-14 text-brand-deep" />
           <h2 className="font-display mt-5 text-3xl sm:text-4xl" role="status">
-            Thank you — your request is in
+            Thank you - your request is in
           </h2>
           <p className="mt-4 text-base text-muted-foreground">
             Our team will get in touch on the phone number you shared to understand your signage
@@ -230,7 +230,7 @@ export function QuoteForm() {
             onChange={(value) => update("budget", value)}
           />
 
-          {/* Honeypot — hidden from users, filled only by bots. */}
+          {/* Honeypot - hidden from users, filled only by bots. */}
           <div aria-hidden="true" className="hidden">
             <label htmlFor="company_website">Company website</label>
             <input

@@ -8,7 +8,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-6">
-        <a href="#top" className="flex min-w-0 items-center" aria-label="The Board Company — home">
+        <a href="#top" className="flex min-w-0 items-center" aria-label="The Board Company - home">
           <img
             src={logo}
             alt="The Board Company logo"
