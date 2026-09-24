@@ -17,7 +17,7 @@ import { BUSINESS } from "@/lib/business";
 
 const TITLE = "Custom LED & 3D Sign Boards in Bengaluru | The Board Company";
 const DESCRIPTION =
-  "ISO 9001:2005 certified sign board manufacturer in Bengaluru. Custom 3D, LED, acrylic and channel letter signage — designed, made and installed in-house. Get a free quote.";
+  "ISO 9001:2005 certified sign board manufacturer in Bengaluru. Custom 3D, LED, acrylic and channel letter signage - designed, made and installed in-house. Get a free quote.";
 
 // Structured data mirrors only what is stated on this page and published by the business.
 const STRUCTURED_DATA = {
