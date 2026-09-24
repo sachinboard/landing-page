@@ -5,6 +5,13 @@ import svcLetters from "@/assets/ls-svc-videoboard.jpg";
 import svcLightbox from "@/assets/ls-proj-1.jpg";
 import svcVideoWall from "@/assets/ls-svc-videowall.jpg";
 import { QuoteButton } from "@/components/landing/cta";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const SERVICES = [
   {
@@ -53,41 +60,44 @@ const SERVICES = [
 
 export function Services() {
   return (
-    <section id="services" className="bg-background">
+    <section id="services" className="bg-background" aria-labelledby="services-title">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-20">
         <p className="text-xs font-bold tracking-[0.18em] text-brand-deep uppercase">
           What we manufacture
         </p>
-        <h2 className="font-display mt-3 max-w-2xl text-3xl sm:text-4xl">
-          Signage for every kind of storefront
+        <h2 id="services-title" className="font-display mt-3 max-w-2xl text-3xl sm:text-4xl">
+          Choose your signage
         </h2>
         <p className="mt-4 max-w-2xl text-base text-muted-foreground">
           Every board is made to your brand artwork, site measurements and lighting conditions — not
           picked from a catalogue.
         </p>
 
-        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((service) => (
-            <li
-              key={service.title}
-              className="overflow-hidden rounded-lg border border-border bg-card"
-            >
-              <img
-                src={service.image}
-                alt={service.alt}
-                loading="lazy"
-                decoding="async"
-                className="aspect-[4/3] w-full bg-muted object-cover"
-              />
-              <div className="p-5">
-                <h3 className="font-display text-lg text-ink">{service.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {service.useCase}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <Carousel opts={{ align: "start", loop: true }} className="mt-10 px-1 md:px-12">
+          <CarouselContent>
+            {SERVICES.map((service) => (
+              <CarouselItem key={service.title} className="basis-[90%] sm:basis-1/2">
+                <article className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+                  <img
+                    src={service.image}
+                    alt={service.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[16/10] w-full bg-muted object-cover"
+                  />
+                  <div className="flex flex-1 flex-col p-6 md:p-7">
+                    <h3 className="font-display text-xl text-ink md:text-2xl">{service.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+                      {service.useCase}
+                    </p>
+                  </div>
+                </article>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
 
         <div className="mt-10">
           <QuoteButton location="services" className="px-6 py-3.5 text-base" />
