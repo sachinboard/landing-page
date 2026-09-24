@@ -6,11 +6,11 @@ import { HERO_SIGNAGE_TYPES } from "@/lib/business";
 import { getAttribution, trackEvent } from "@/lib/tracking";
 import { cn } from "@/lib/utils";
 
-type Field = "fullName" | "email" | "brand" | "size" | "signageType";
+type Field = "fullName" | "phone" | "email" | "brand" | "size" | "signageType";
 type Values = Record<Field, string>;
 type Errors = Partial<Record<Field, string>> & { terms?: string | undefined };
 
-const EMPTY: Values = { fullName: "", email: "", brand: "", size: "", signageType: "" };
+const EMPTY: Values = { fullName: "", phone: "", email: "", brand: "", size: "", signageType: "" };
 
 const fieldClass =
   "mt-1.5 block w-full rounded-md border border-input bg-background px-3 py-2.5 text-base text-foreground placeholder:text-muted-foreground/70 focus:border-brand-deep focus:outline-none";
@@ -39,6 +39,9 @@ export function HeroQuoteForm() {
 
     const next: Errors = {};
     if (values.fullName.trim().length < 2) next.fullName = "Please enter your name.";
+    const digits = values.phone.replace(/\D/g, "");
+    if (digits.length < 10 || values.phone.trim().length > 20)
+      next.phone = "Enter a valid phone number with at least 10 digits.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(values.email.trim()))
       next.email = "Enter a valid email address.";
     if (values.brand.trim().length < 2) next.brand = "Please enter your brand name.";
@@ -64,6 +67,7 @@ export function HeroQuoteForm() {
 
     const { error } = await supabase.from("quote_leads").insert({
       full_name: values.fullName.trim(),
+      phone: values.phone.trim(),
       email: values.email.trim(),
       business_name: values.brand.trim(),
       signage_requirement: values.signageType,
@@ -120,6 +124,26 @@ export function HeroQuoteForm() {
             className={cn(fieldClass, errors.fullName && "border-destructive")}
           />
           <FieldError id="hero-fullName-error" message={errors.fullName} />
+        </div>
+
+        <div className="min-w-0">
+          <label htmlFor="hero-phone" className={labelClass}>
+            Phone number <span className="text-destructive">*</span>
+          </label>
+          <input
+            id="hero-phone"
+            name="phone"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            placeholder="10-digit mobile number"
+            value={values.phone}
+            onChange={(event) => update("phone", event.target.value)}
+            aria-invalid={errors.phone ? true : undefined}
+            aria-describedby={errors.phone ? "hero-phone-error" : undefined}
+            className={cn(fieldClass, errors.phone && "border-destructive")}
+          />
+          <FieldError id="hero-phone-error" message={errors.phone} />
         </div>
 
         <div className="min-w-0">

@@ -2,6 +2,13 @@ import goldsGym from "@/assets/brands/golds-gym-t.png.asset.json";
 import fabricSpa from "@/assets/brands/fabric-spa-t.png.asset.json";
 import skyGarden from "@/assets/brands/sky-garden-t.png.asset.json";
 import ginza from "@/assets/brands/ginza-t.png.asset.json";
+import mumbaiCafe from "@/assets/brands/mumbai-cafe.png.asset.json";
+import skygardenBar from "@/assets/brands/skygarden-bar.png.asset.json";
+import teaDay from "@/assets/brands/tea-day.png.asset.json";
+import holeInTheWall from "@/assets/brands/hole-in-the-wall.png.asset.json";
+import chicStudio from "@/assets/brands/chic-studio.png.asset.json";
+import kHotels from "@/assets/brands/k-hotels.png.asset.json";
+import clarksInn from "@/assets/brands/clarks-inn.png.asset.json";
 
 import { BRAND_CLIENTS } from "@/lib/business";
 import { cn } from "@/lib/utils";
@@ -13,6 +20,13 @@ const LOGOS = [
   { name: "Sky Garden", src: skyGarden.url },
   // Single-colour black logo — inverted so it reads on the dark banner.
   { name: "Ginza", src: ginza.url, invert: true },
+  { name: "1966 The Mumbai Cafe", src: mumbaiCafe.url },
+  { name: "Skygarden Bar & Kitchen", src: skygardenBar.url },
+  { name: "Tea Day", src: teaDay.url },
+  { name: "Hole In The Wall Cafe", src: holeInTheWall.url },
+  { name: "The Chic Studio", src: chicStudio.url },
+  { name: "K Hotels", src: kHotels.url },
+  { name: "Clark's Inn", src: clarksInn.url },
 ] as const;
 
 const LOGO_NAMES = LOGOS.map((logo) => logo.name) as readonly string[];
@@ -50,7 +64,7 @@ export function BrandMarquee() {
                 loading="lazy"
                 decoding="async"
                 className={cn(
-                  "h-11 w-auto max-w-[8.5rem] object-contain",
+                  "h-11 w-auto max-w-[8.5rem] rounded object-contain",
                   item.invert && "brightness-0 invert",
                 )}
               />
