@@ -1,6 +1,6 @@
 const FACTS = [
   { value: "ISO 9001:2005", label: "Certified signage manufacturer" },
-  { value: "2,000+", label: "Signage projects completed" },
+  { value: "SERVICE ISSUES ", label: " Resolved in 48–72 hours" },
   { value: "30", label: "In-house design & production team" },
   { value: "5,000 sq. ft.", label: "Manufacturing facility in Bengaluru" },
   { value: "5-year", label: "Unconditional warranty on our boards" },
