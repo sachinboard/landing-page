@@ -29,9 +29,9 @@ export function Hero() {
           <ul className="mt-5 max-w-lg space-y-2.5 text-base leading-relaxed text-ink-muted sm:text-lg">
             {[
               "Design, manufacturing and installation handled end to end",
-              "Made in our own 5,000 sq. ft. facility in Bengaluru",
+              "Service issues resolved in 48–72 hours",
               "LED, 3D, acrylic, channel letters and digital displays",
-              "Built to match your brand exactly",
+              "5-year unconditional warranty ",
             ].map((point) => (
               <li key={point} className="flex gap-2.5">
                 <Check aria-hidden="true" className="mt-1 size-4 shrink-0 text-brand" />
@@ -48,7 +48,7 @@ export function Hero() {
           <BrandMarquee />
 
           <p className="mt-7 text-sm text-ink-muted">
-            5-year unconditional warranty · Service issues resolved in 48–72 hours
+            {"\n"}
           </p>
         </div>
 
