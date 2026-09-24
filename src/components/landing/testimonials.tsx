@@ -68,8 +68,8 @@ export function Testimonials() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
+          <CarouselPrevious className="hidden md:flex border-brand bg-brand text-brand-foreground hover:bg-brand/85 hover:text-brand-foreground" />
+          <CarouselNext className="hidden md:flex border-brand bg-brand text-brand-foreground hover:bg-brand/85 hover:text-brand-foreground" />
         </Carousel>
       </div>
     </section>

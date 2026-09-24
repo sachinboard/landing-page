@@ -58,7 +58,7 @@ export const HERO_SIGNAGE_TYPES = [
   "LED Backlight Flex",
   "3D Letters on MS Frame",
   "Fabric Board",
-  "Mixed Board",
+  "Multitype Board",
   "Need Consultation",
 ] as const;
 
