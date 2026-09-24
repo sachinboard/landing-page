@@ -5,7 +5,7 @@ const STEPS = [
   },
   {
     title: "Consultation & site inputs",
-    body: "Our team advises on the right board type, material and lighting for your location and takes measurements.",
+    body: "Our team advises on the right board type, material and lighting for your location and takes accurate measurements.",
   },
   {
     title: "Design & quotation",
