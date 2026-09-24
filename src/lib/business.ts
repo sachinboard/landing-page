@@ -50,7 +50,6 @@ export const BRAND_CLIENTS = [
   "Hole In The Wall Cafe",
   "Dizzy Duck",
   "Tug of Fur",
-  "Tree Suites",
 ] as const;
 
 /** Types offered in the hero quote form. */
