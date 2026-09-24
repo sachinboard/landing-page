@@ -8,8 +8,8 @@ import { BUSINESS } from "@/lib/business";
 export function Hero() {
   return (
     <section id="top" className="bg-ink text-ink-foreground">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:items-start md:gap-12 md:py-16">
-        <div className="min-w-0">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:items-stretch md:gap-12 md:py-16">
+        <div className="flex min-w-0 flex-col md:justify-between">
           <p className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold tracking-[0.18em] text-brand uppercase">
             <span className="inline-flex items-center gap-1.5">
               <BadgeCheck aria-hidden="true" className="size-4" /> ISO 9001:2005 Certified

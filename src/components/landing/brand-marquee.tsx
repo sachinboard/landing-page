@@ -9,6 +9,11 @@ import holeInTheWall from "@/assets/brands/hole-in-the-wall.png.asset.json";
 import chicStudio from "@/assets/brands/chic-studio.png.asset.json";
 import kHotels from "@/assets/brands/k-hotels.png.asset.json";
 import clarksInn from "@/assets/brands/clarks-inn.png.asset.json";
+import spin from "@/assets/brands/spin.png.asset.json";
+import gillys from "@/assets/brands/gillys.png.asset.json";
+import bublee from "@/assets/brands/bublee.png.asset.json";
+import dizzyDuck from "@/assets/brands/dizzy-duck.png.asset.json";
+import tugOfFur from "@/assets/brands/tug-of-fur.png.asset.json";
 
 import { BRAND_CLIENTS } from "@/lib/business";
 import { cn } from "@/lib/utils";
@@ -27,6 +32,11 @@ const LOGOS = [
   { name: "The Chic Studio", src: chicStudio.url },
   { name: "K Hotels", src: kHotels.url },
   { name: "Clark's Inn", src: clarksInn.url },
+  { name: "Spin Salon", src: spin.url },
+  { name: "Gilly's", src: gillys.url },
+  { name: "Bublee", src: bublee.url },
+  { name: "Dizzy Duck", src: dizzyDuck.url },
+  { name: "Tug of Fur", src: tugOfFur.url },
 ] as const;
 
 const LOGO_NAMES = LOGOS.map((logo) => logo.name) as readonly string[];
