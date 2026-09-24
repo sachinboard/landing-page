@@ -5,15 +5,15 @@ const STEPS = [
   },
   {
     title: "Consultation & site inputs",
-    body: "Our team advises on the right board type, material and lighting for your location and takes accurate measurements.",
+    body: "Our team advises the right board type, material & lighting as per the need. They visits the location to take accurate measurements.",
   },
   {
     title: "Design & quotation",
-    body: "You get a design proposal with a written quote, so you approve exactly what will be manufactured.",
+    body: "You share the design or we design (complimentary) and share a mock up with you. upon approval, we start on the production.",
   },
   {
     title: "Production & installation",
-    body: "Standard signboards are manufactured in 5–7 days, then installed by our own team with warranty and maintenance support.",
+    body: "Standard signboards are manufactured in 72 hours and installed by our team.",
   },
 ];
 
