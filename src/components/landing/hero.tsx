@@ -27,8 +27,8 @@ export function Hero() {
 
           <ul className="mt-5 max-w-lg space-y-2.5 text-base leading-relaxed text-ink-muted sm:text-lg">
             {[
-              "Design, manufacturing and installation handled end to end",
-              "Service issues resolved in 48–72 hours",
+              "Design, manufacturing and installation ",
+              "2,000+ Signage projects completed",
               "LED, 3D, acrylic, channel letters and digital displays",
               "5-year unconditional warranty ",
             ].map((point) => (

@@ -14,7 +14,7 @@ const REASONS = [
   {
     icon: ShieldCheck,
     title: "5-year unconditional warranty",
-    body: "Every board we manufacture carries an unconditional 5-year warranty.",
+    body: "Every board we manufacture carries an unconditional 5-year warranty. Excludes physical damage.",
   },
   {
     icon: Timer,
@@ -23,8 +23,8 @@ const REASONS = [
   },
   {
     icon: Wrench,
-    title: "Installation & maintenance included",
-    body: "We install the signage ourselves and provide ongoing maintenance support after handover.",
+    title: "Installation & maintenance  included",
+    body: "We install the signage efficiently with the help of active design & logistics field agents",
   },
   {
     icon: Factory,

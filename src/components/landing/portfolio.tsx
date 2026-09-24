@@ -9,32 +9,32 @@ const PROJECTS = [
   {
     image: projGym,
     alt: "Gold's Gym interior wall with large yellow 3D letters reading Can't Stop Won't Stop",
-    caption: "Gold's Gym — interior 3D wall lettering",
+    caption: "                 Gold's Gym ",
   },
   {
     image: projPet,
     alt: "Black storefront sign board with white letters for Tug of Fur pet store and spa",
-    caption: "Tug of Fur — storefront name board",
+    caption: "                 Tug of Fur ",
   },
   {
     image: projCafe,
     alt: "Illuminated backlit sign board for Goofy's Cafe glowing at night",
-    caption: "Goofy's Cafe — backlit board with LED accents",
+    caption: "                 Goofy's Cafe ",
   },
   {
     image: projBar,
     alt: "Illuminated channel letter sign board reading Gilly's Super Bar in red and blue",
-    caption: "Gilly's Super Bar — illuminated letter signage",
+    caption: "                Gilly's Super Bar",
   },
   {
     image: projMonk,
     alt: "Purple 2D LED sign board with illuminated ice cream artwork for Chill'd Monk",
-    caption: "Chill'd Monk — 2D LED sign board",
+    caption: "                 Chill'd Monk ",
   },
   {
     image: projDuck,
     alt: "Green 3D sign board with raised gold letters for Dizzy Duck",
-    caption: "Dizzy Duck — 3D sign board",
+    caption: "                 Dizzy Duck ",
   },
 ];
 
