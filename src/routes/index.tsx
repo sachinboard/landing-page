@@ -5,6 +5,7 @@ import { Hero } from "@/components/landing/hero";
 import { TrustStrip } from "@/components/landing/trust-strip";
 import { Services } from "@/components/landing/services";
 import { WhyUs } from "@/components/landing/why-us";
+import { Testimonials } from "@/components/landing/testimonials";
 import { Portfolio } from "@/components/landing/portfolio";
 import { Process } from "@/components/landing/process";
 import { QuoteForm } from "@/components/landing/quote-form";
@@ -83,6 +84,7 @@ function LandingPage() {
         <Hero />
         <TrustStrip />
         <WhyUs />
+        <Testimonials />
         <Services />
         <Portfolio />
         <Process />
