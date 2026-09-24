@@ -8,7 +8,7 @@ export function FinalCta() {
           Ready to get your sign board made?
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-base text-brand-foreground/85">
-          Share your requirement and our Bengaluru team will advise on the right board and send you a
+          Share your requirement and our professional team will consult you on THE RIGHT BOARD and share a
           quotation.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
