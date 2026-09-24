@@ -157,11 +157,6 @@
   animation-play-state: paused;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-  }
-}
 
 /* Thick highlighter stroke behind a word, echoing the brand wordmark. */
 @utility highlight-mark {

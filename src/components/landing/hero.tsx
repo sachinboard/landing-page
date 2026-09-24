@@ -42,18 +42,17 @@ export function Hero() {
 
           <GoogleRating />
 
-          <p className="mt-6 text-xs font-bold tracking-[0.18em] text-brand uppercase">
-            100+ Brands trust us
-          </p>
-          <BrandMarquee />
-
-          <p className="mt-7 text-sm text-ink-muted">
-            {"\n"}
-          </p>
         </div>
 
         <div id="hero-quote" className="min-w-0">
           <HeroQuoteForm />
+        </div>
+
+        <div className="min-w-0 md:col-span-2">
+          <p className="text-xs font-bold tracking-[0.18em] text-brand uppercase">
+            100+ Brands trust us
+          </p>
+          <BrandMarquee />
         </div>
       </div>
     </section>
