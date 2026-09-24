@@ -3,7 +3,6 @@ import { BadgeCheck, Check, MapPin } from "lucide-react";
 import { BrandMarquee } from "@/components/landing/brand-marquee";
 import { GoogleRating } from "@/components/landing/google-rating";
 import { HeroQuoteForm } from "@/components/landing/hero-quote-form";
-import { BUSINESS } from "@/lib/business";
 
 export function Hero() {
   return (
@@ -15,7 +14,7 @@ export function Hero() {
               <BadgeCheck aria-hidden="true" className="size-4" /> ISO 9001:2005 Certified
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <MapPin aria-hidden="true" className="size-4" /> {BUSINESS.city}
+              <MapPin aria-hidden="true" className="size-4" />
             </span>
           </p>
 
