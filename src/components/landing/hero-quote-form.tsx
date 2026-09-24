@@ -197,7 +197,7 @@ export function HeroQuoteForm() {
           />
         </div>
 
-        <div className="min-w-0">
+        <div className="min-w-0 sm:col-span-2">
           <label htmlFor="hero-signageType" className={labelClass}>
             Type <span className="text-destructive">*</span>
           </label>
