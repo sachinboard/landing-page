@@ -142,7 +142,7 @@ export function QuoteForm() {
           Get a Custom Quote for Your Business Signage
         </h2>
         <p className="mt-4 text-base text-muted-foreground">
-          Tell us what you need and our team will call you back with advice and a written quotation.
+          Tell us what you need and our professional team will call you for tele-consultation and a free quotation.
           Takes under a minute.
         </p>
         <p className="mt-4 flex items-center gap-2 text-sm font-semibold text-brand-deep">
