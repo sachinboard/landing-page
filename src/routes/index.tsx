@@ -81,9 +81,9 @@ function LandingPage() {
       <Header />
       <main>
         <Hero />
+        <WhyUs />
         <TrustStrip />
         <Services />
-        <WhyUs />
         <Portfolio />
         <Process />
         <QuoteForm />
