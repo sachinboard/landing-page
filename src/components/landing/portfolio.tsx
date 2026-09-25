@@ -1,4 +1,5 @@
-import projGym from "@/assets/ls-proj-3.jpg";
+import projGymAsset from "@/assets/golds-gym-wall.png.asset.json";
+const projGym = projGymAsset.url;
 import projPet from "@/assets/ls-proj-2d.jpg";
 import projCafe from "@/assets/ls-svc-videoled.jpg";
 import projBar from "@/assets/ls-svc-channel.jpg";
