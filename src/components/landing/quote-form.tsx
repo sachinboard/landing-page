@@ -243,7 +243,7 @@ export function QuoteForm() {
             />
           </div>
 
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-3">
             {status === "error" && (
               <p role="alert" className="mb-4 rounded-md bg-destructive/10 p-3 text-sm text-destructive">
                 Sorry, we couldn&apos;t send your request just now. Please try again, or message us on
