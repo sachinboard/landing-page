@@ -9,12 +9,12 @@ const REASONS = [
   {
     icon: Factory,
     title: "Made in our own facility",
-    body: "A 30-member team works out of a 5,000 sq. ft. workspace, so design, fabrication and finishing stay under one roof.",
+    body: "A 30-member professional team works out of a 5,000 sq. ft. workspace, so design, fabrication and finishing stay under one roof.",
   },
   {
     icon: ShieldCheck,
     title: "5-year unconditional warranty",
-    body: "Every board we manufacture carries an unconditional 5-year warranty (Excludes physical damage).",
+    body: "Every board we manufacture carries an unconditional 5-year warranty (excludes physical damage).",
   },
   {
     icon: Timer,
@@ -28,7 +28,7 @@ const REASONS = [
   },
   {
     icon: Factory,
-    title: "Built on 2,000+ projects",
+    title: "2000+ projects delivered",
     body: "Since 2020 - after two years of R&D - we have completed over 2,000 signage projects for brands across Bengaluru.",
   },
 ];
