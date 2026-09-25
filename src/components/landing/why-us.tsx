@@ -14,7 +14,7 @@ const REASONS = [
   {
     icon: ShieldCheck,
     title: "5-year unconditional warranty",
-    body: "Every board we manufacture carries an unconditional 5-year warranty. Excludes physical damage.",
+    body: "Every board we manufacture carries an unconditional 5-year warranty (Excludes physical damage).",
   },
   {
     icon: Timer,
