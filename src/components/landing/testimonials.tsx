@@ -5,10 +5,8 @@ import r24 from "@/assets/reviews/r24.png.asset.json";
 import r25 from "@/assets/reviews/r25.png.asset.json";
 import r26 from "@/assets/reviews/r26.png.asset.json";
 import r27 from "@/assets/reviews/r27.png.asset.json";
-import r28 from "@/assets/reviews/r28.png.asset.json";
-import r29 from "@/assets/reviews/r29.png.asset.json";
 import r31 from "@/assets/reviews/r31.png.asset.json";
-import r32 from "@/assets/reviews/r32.png.asset.json";
+import r33 from "@/assets/reviews/r33.png.asset.json";
 import {
   Carousel,
   CarouselContent,
@@ -26,9 +24,9 @@ const REVIEWS: { name: string; when: string; photo?: string; text: string }[] = 
   { name: "Bhoomika Bhoomi", when: "8 months ago", text: "The Board Company has done a fantastic signboard for our restaurant at a very reasonable price. The quality is excellent, and they also provided a 5-year warranty. Highly recommended - if you need any type of signboard, definitely go with The Board Company." },
   { name: "K Naga Vishala", when: "a year ago", photo: r31.url, text: "We recently got our name board made for House of Davanagere Benne Dose and we couldn't be happier with the result! The craftsmanship, attention to detail, and quality of materials were top-notch. The board has added a great touch to our restaurant's branding, and we've received many compliments on it already." },
   { name: "Sushanth Kantharaj", when: "a year ago", photo: r27.url, text: "I recently worked with The Board Company for the signboard of my petrol bunk. Pavan was incredibly responsive from day one, offering honest opinions and sharing his extensive knowledge. The service was delivered on time and exceeded my expectations in quality. The installation was completed efficiently in just one day." },
-  { name: "Manoj M", when: "2 years ago", photo: r28.url, text: "I had a great experience with the board company! Pavan was super helpful throughout the entire process, from designing till installation. Quality and service is top notch." },
-  { name: "Satish Choudhury", when: "3 years ago", photo: r29.url, text: "Excellent work done by The Board Company team, Mr Pavan knows the Biz. We had a signage requirement for our cafe and he responded to all our queries very politely. He provides competitive pricing, on time delivery and spot on work! Kudos team." },
-  { name: "Manohara H N", when: "3 years ago", photo: r32.url, text: "Thanks to The Board Company Team for the best 3D Board, especially Pavan, Harsha and team. I recommend to all - they do your work on time with the best price." },
+  { name: "Mahan Gowda", when: "19 hours ago", text: "Affordle, Quality, On Time, Perfect Finish and also most thing is trustable. Do not miss this place" },
+  { name: "Samuel Graceson Raja", when: "6 months ago", photo: r33.url, text: "Excellent Naming Board Work. We are extremely happy with the service and quality of work. The naming board for our school (Bishop Angels School, Whitefield) was done perfectly and very neatly. Even though it was a huge project, the company completed the entire work within just 2 days which is truly impressive. A special thanks to Pavan Sir for being so kind, approachable, and supportive." },
+  { name: "dharma malla", when: "6 months ago", text: "Best place to buy video LED wall. They are the only company to offer 5 year warranty and also at affordable cost. Mr.Pavan was impressive in his knowledge and also very polite throughout the process. We got LED video wall for our cafe in hampi. They are the best signage manufacturers in Bangalore without any other thought." },
 ];
 
 export function Testimonials() {
