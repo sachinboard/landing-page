@@ -137,7 +137,7 @@ export function QuoteForm() {
 
   return (
     <section id="quote" className="bg-background">
-      <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-20">
         <h2 className="font-display text-3xl sm:text-4xl">
           Get a Custom Quote for Your Business Signage
         </h2>
@@ -150,7 +150,7 @@ export function QuoteForm() {
           ISO 9001:2005 certified · 5-year warranty · 2,000+ projects delivered
         </p>
 
-        <form onSubmit={handleSubmit} noValidate className="mt-8 grid gap-5 sm:grid-cols-2">
+        <form onSubmit={handleSubmit} noValidate className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <TextField
             id="fullName"
             label="Full name"
