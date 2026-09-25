@@ -52,27 +52,18 @@ export const BRAND_CLIENTS = [
   "Tug of Fur",
 ] as const;
 
-/** Types offered in the hero quote form. */
+/** Types offered in both quote forms. */
 export const HERO_SIGNAGE_TYPES = [
   "3D Acrylic",
   "LED Backlight Flex",
   "3D Letters on MS Frame",
   "Fabric Board",
-  "Multitype Board",
+  "Mixed Board",
   "Need Consultation",
+  "Neon Board",
 ] as const;
 
-export const SIGNAGE_OPTIONS = [
-  "3D Sign Board",
-  "2D LED Sign Board",
-  "Acrylic / LED Name Board",
-  "3D Aluminium Channel Letters",
-  "Fabric Backlit Lightbox",
-  "Digital Video Board",
-  "Video Wall",
-  "Neon Sign",
-  "Not sure - need advice",
-] as const;
+export const SIGNAGE_OPTIONS = HERO_SIGNAGE_TYPES;
 
 export const TIMELINE_OPTIONS = [
   "As soon as possible",
