@@ -1,4 +1,4 @@
-import { BadgeCheck, Check, MapPin } from "lucide-react";
+import { BadgeCheck, Check } from "lucide-react";
 
 import { BrandMarquee } from "@/components/landing/brand-marquee";
 import { GoogleRating } from "@/components/landing/google-rating";
@@ -12,9 +12,6 @@ export function Hero() {
           <p className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold tracking-[0.18em] text-brand uppercase">
             <span className="inline-flex items-center gap-1.5">
               <BadgeCheck aria-hidden="true" className="size-4" /> ISO 9001:2005 Certified
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <MapPin aria-hidden="true" className="size-4" />
             </span>
           </p>
 
