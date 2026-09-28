@@ -17,7 +17,7 @@ const SERVICES = [
   {
     title: "3D Sign Boards",
     image: svc3d,
-    alt: "Green 3D sign board with raised gold letters installed outside Dizzy Duck in Bengaluru",
+    alt: "Green and pink 2D LED sign board with neon lettering for Ginza pub and lounge at night",
     useCase:
       "For restaurants, cafés and retail stores that need depth and presence on a busy main road.",
   },
