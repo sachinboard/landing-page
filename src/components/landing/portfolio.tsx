@@ -1,9 +1,13 @@
 import projGymAsset from "@/assets/golds-gym-wall.webp.asset.json";
 const projGym = projGymAsset.url;
-import projPet from "@/assets/ls-proj-2d.webp";
-import projCafe from "@/assets/ls-svc-videoled.webp";
-import projBar from "@/assets/ls-svc-channel.webp";
-import projMonk from "@/assets/ls-svc-2d.webp";
+import projGroviesAsset from "@/assets/portfolio/grovies-cafe.webp.asset.json";
+const projCafe = projGroviesAsset.url;
+import projGillysAsset from "@/assets/portfolio/gillys-bar.webp.asset.json";
+const projPet = projGillysAsset.url;
+import projNaplesAsset from "@/assets/portfolio/dnaples-pizza.webp.asset.json";
+const projBar = projNaplesAsset.url;
+import projBiharAsset from "@/assets/portfolio/taste-of-bihar.webp.asset.json";
+const projMonk = projBiharAsset.url;
 import projDuck from "@/assets/ls-svc-3d.webp";
 
 const PROJECTS = [
@@ -14,22 +18,22 @@ const PROJECTS = [
   },
   {
     image: projPet,
-    alt: "Black storefront sign board with white letters for Tug of Fur pet store and spa",
+    alt: "Illuminated orange and blue 3D letters for Gilly's Super Bar mounted on a black slatted storefront board",
     caption: "                                  Tug of Fur ",
   },
   {
     image: projCafe,
-    alt: "Illuminated backlit sign board for Goofy's Cafe glowing at night",
+    alt: "Backlit sign board at night with glowing white Kannada and English lettering for Grovies, a dine-in sports bistro",
     caption: "                                Goofy's Cafe ",
   },
   {
     image: projBar,
-    alt: "Illuminated channel letter sign board reading Gilly's Super Bar in red and blue",
+    alt: "Cream 3D channel letters reading D'Naples pizza mounted above a glass shopfront at dusk",
     caption: "                               Gilly's Super Bar",
   },
   {
     image: projMonk,
-    alt: "Purple 2D LED sign board with illuminated ice cream artwork for Chill'd Monk",
+    alt: "Warm orange LED neon sign reading The taste of Bihar glowing on a wall at night",
     caption: "                                  Chill'd Monk ",
   },
   {
