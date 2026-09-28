@@ -47,28 +47,24 @@ export function Testimonials() {
   // the slider while the reviews are actually on screen.
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reduceMotion.matches) {
-      autoplay.stop();
-      return;
-    }
-    const onReduceChange = (event: MediaQueryListEvent) => {
-      if (event.matches) autoplay.stop();
-      else autoplay.play();
-    };
-    reduceMotion.addEventListener("change", onReduceChange);
-
     const node = regionRef.current;
     const observer =
       node && typeof IntersectionObserver !== "undefined"
         ? new IntersectionObserver(
             ([entry]) => {
-              if (entry?.isIntersecting) autoplay.play();
+              if (entry?.isIntersecting && !reduceMotion.matches) autoplay.play();
               else autoplay.stop();
             },
             { threshold: 0.2 },
           )
         : null;
     if (node && observer) observer.observe(node);
+
+    const onReduceChange = (event: MediaQueryListEvent) => {
+      if (event.matches) autoplay.stop();
+      else autoplay.play();
+    };
+    reduceMotion.addEventListener("change", onReduceChange);
 
     return () => {
       reduceMotion.removeEventListener("change", onReduceChange);
