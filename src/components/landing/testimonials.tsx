@@ -80,7 +80,12 @@ export function Testimonials() {
           A GLIMPSE OF OUR GOOGLE REVIEWS
         </h2>
 
-        <Carousel opts={{ align: "start", loop: true }} className="mt-6 px-1 md:mt-10 md:px-12">
+        <Carousel
+          ref={regionRef}
+          plugins={[autoplay]}
+          opts={{ align: "start", loop: true }}
+          className="mt-6 px-1 md:mt-10 md:px-12"
+        >
           <CarouselContent>
             {REVIEWS.map((r) => (
               <CarouselItem key={r.name} className="basis-[88%] sm:basis-1/2 lg:basis-1/3">
