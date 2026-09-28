@@ -1,10 +1,10 @@
-import projGymAsset from "@/assets/golds-gym-wall.jpg.asset.json";
+import projGymAsset from "@/assets/golds-gym-wall.webp.asset.json";
 const projGym = projGymAsset.url;
-import projPet from "@/assets/ls-proj-2d.jpg";
-import projCafe from "@/assets/ls-svc-videoled.jpg";
-import projBar from "@/assets/ls-svc-channel.jpg";
-import projMonk from "@/assets/ls-svc-2d.jpg";
-import projDuck from "@/assets/ls-svc-3d.jpg";
+import projPet from "@/assets/ls-proj-2d.webp";
+import projCafe from "@/assets/ls-svc-videoled.webp";
+import projBar from "@/assets/ls-svc-channel.webp";
+import projMonk from "@/assets/ls-svc-2d.webp";
+import projDuck from "@/assets/ls-svc-3d.webp";
 
 const PROJECTS = [
   {
