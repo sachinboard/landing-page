@@ -17,7 +17,7 @@ const SERVICES = [
   {
     title: "3D Sign Boards",
     image: svc3d,
-    alt: "Golden 3D Kannada letter sign board with backlit border lighting on a dark facade at night",
+    alt: "Fit24 Fitness Club backlit 3D sign board with orange and white letters and Kannada lettering on a dark facade at night",
     fit: "contain",
     useCase:
       "For restaurants, cafés and retail stores that need depth and presence on a busy main road.",
