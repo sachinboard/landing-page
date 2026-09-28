@@ -56,8 +56,7 @@ export function Portfolio() {
           Boards we have built and installed
         </h2>
         <p className="mt-4 max-w-2xl text-base text-ink-muted">
-          A sample of signage manufactured and installed by our own team for businesses across
-          Bengaluru.
+          {"\n"}
         </p>
 
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
