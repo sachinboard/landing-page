@@ -17,7 +17,8 @@ const SERVICES = [
   {
     title: "3D Sign Boards",
     image: svc3d,
-    alt: "Gold 3D Kannada letter sign board glowing on a dark hotel facade in Bengaluru",
+    alt: "Golden 3D Kannada letter sign board with backlit border lighting on a dark facade at night",
+    fit: "contain",
     useCase:
       "For restaurants, cafés and retail stores that need depth and presence on a busy main road.",
   },
@@ -82,7 +83,7 @@ export function Services() {
                     alt={service.alt}
                     loading="lazy"
                     decoding="async"
-                    className="w-2/5 shrink-0 self-stretch bg-muted object-cover min-h-[200px]"
+                    className={`w-2/5 shrink-0 self-stretch bg-muted min-h-[200px] ${service.fit === "contain" ? "object-contain" : "object-cover"}`}
                   />
                   <div className="flex flex-1 flex-col justify-center p-5 md:p-6">
                     <h3 className="font-display text-xl text-ink md:text-2xl">{service.title}</h3>
