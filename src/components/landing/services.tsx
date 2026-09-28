@@ -1,9 +1,9 @@
-import svc3d from "@/assets/ls-svc-3d.jpg";
-import svc2d from "@/assets/ls-svc-2d.jpg";
-import svcChannel from "@/assets/ls-proj-channel.jpg";
-import svcLetters from "@/assets/ls-svc-videoboard.jpg";
-import svcLightbox from "@/assets/ls-proj-1.jpg";
-import svcVideoWall from "@/assets/ls-svc-videowall.jpg";
+import svc3d from "@/assets/ls-svc-3d.webp";
+import svc2d from "@/assets/ls-svc-2d.webp";
+import svcChannel from "@/assets/ls-proj-channel.webp";
+import svcLetters from "@/assets/ls-svc-videoboard.webp";
+import svcLightbox from "@/assets/ls-proj-1.webp";
+import svcVideoWall from "@/assets/ls-svc-videowall.webp";
 import { QuoteButton } from "@/components/landing/cta";
 import {
   Carousel,

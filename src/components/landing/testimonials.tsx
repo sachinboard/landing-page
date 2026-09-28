@@ -1,9 +1,9 @@
 import { Star } from "lucide-react";
 
-import r23 from "@/assets/reviews/r23.png.asset.json";
-import r25 from "@/assets/reviews/r25.png.asset.json";
-import r33 from "@/assets/reviews/r33.png.asset.json";
-import presha from "@/assets/reviews/presha.png.asset.json";
+import r23 from "@/assets/reviews/r23.webp.asset.json";
+import r25 from "@/assets/reviews/r25.webp.asset.json";
+import r33 from "@/assets/reviews/r33.webp.asset.json";
+import presha from "@/assets/reviews/presha.webp.asset.json";
 import {
   Carousel,
   CarouselContent,
