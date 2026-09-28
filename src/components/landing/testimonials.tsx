@@ -58,7 +58,7 @@ export function Testimonials() {
       node && typeof IntersectionObserver !== "undefined"
         ? new IntersectionObserver(
             ([entry]) => {
-              if (entry.isIntersecting) autoplay.play();
+              if (entry?.isIntersecting) autoplay.play();
               else autoplay.stop();
             },
             { threshold: 0.2 },
