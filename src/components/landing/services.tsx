@@ -50,7 +50,7 @@ const SERVICES = [
       "For clinics, salons and mall units that need a compact, evenly lit logo board.",
   },
   {
-    title: "Digital Video Boards & Video Walls",
+    title: "NEON SIGN",
     image: svcVideoWall,
     alt: "Bright red and blue LED neon sign reading The Lazy Turtle glowing against a dark wall",
     useCase:
