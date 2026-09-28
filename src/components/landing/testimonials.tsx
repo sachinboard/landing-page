@@ -26,17 +26,17 @@ const REVIEWS: { name: string; when: string; photo?: string; text: string }[] = 
 export function Testimonials() {
   return (
     <section className="bg-ink text-ink-foreground" aria-labelledby="testimonials-title">
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-20">
         <p className="text-xs font-bold tracking-[0.18em] text-brand uppercase">GOOGLE REVIEWS</p>
         <h2 id="testimonials-title" className="font-display mt-3 max-w-2xl text-3xl sm:text-4xl">
           A GLIMPSE OF OUR GOOGLE REVIEWS
         </h2>
 
-        <Carousel opts={{ align: "start", loop: true }} className="mt-10 px-1 md:px-12">
+        <Carousel opts={{ align: "start", loop: true }} className="mt-6 px-1 md:mt-10 md:px-12">
           <CarouselContent>
             {REVIEWS.map((r) => (
               <CarouselItem key={r.name} className="basis-[88%] sm:basis-1/2 lg:basis-1/3">
-                <article className="flex h-full flex-col rounded-lg bg-card p-6 text-card-foreground">
+                <article className="flex h-full flex-col rounded-lg bg-card p-4 text-card-foreground sm:p-6">
                   <header className="flex items-center gap-3">
                     {r.photo ? (
                       <img src={r.photo} alt="" width={48} height={48} loading="lazy" className="size-12 rounded-full" />

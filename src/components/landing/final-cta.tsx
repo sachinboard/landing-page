@@ -3,7 +3,7 @@ import { QuoteButton, WhatsAppButton, PhoneLink } from "@/components/landing/cta
 export function FinalCta() {
   return (
     <section className="bg-brand text-brand-foreground">
-      <div className="mx-auto max-w-4xl px-4 py-14 text-center sm:px-6 md:py-20">
+      <div className="mx-auto max-w-4xl px-4 py-10 text-center sm:px-6 md:py-20">
         <h2 className="font-display text-3xl sm:text-4xl">
           Ready to get your sign board made?
         </h2>
@@ -11,7 +11,7 @@ export function FinalCta() {
           Share your requirement and our professional team will consult you on THE RIGHT BOARD and share a
           quotation.
         </p>
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <QuoteButton
             location="final_cta"
             className="w-full bg-ink px-6 py-3.5 text-base text-ink-foreground hover:bg-ink/90 sm:w-auto"

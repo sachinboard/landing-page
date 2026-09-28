@@ -5,7 +5,7 @@ import { BUSINESS } from "@/lib/business";
 export function Footer() {
   return (
     <footer className="bg-ink text-ink-foreground">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 sm:px-6 md:grid-cols-3 md:gap-8">
         <div className="min-w-0">
           <img
             src={logo}

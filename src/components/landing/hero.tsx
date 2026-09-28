@@ -7,7 +7,7 @@ import { HeroQuoteForm } from "@/components/landing/hero-quote-form";
 export function Hero() {
   return (
     <section id="top" className="bg-ink text-ink-foreground">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:items-stretch md:gap-12 md:py-16">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-8 sm:px-6 md:grid-cols-2 md:items-stretch md:gap-12 md:py-16">
         <div className="flex min-w-0 flex-col md:justify-between">
           <p className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold tracking-[0.18em] text-brand uppercase">
             <span className="inline-flex items-center gap-1.5">
