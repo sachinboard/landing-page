@@ -12,6 +12,9 @@ type Errors = Partial<Record<Field, string>> & { terms?: string | undefined };
 
 const EMPTY: Values = { fullName: "", phone: "", email: "", brand: "", size: "", signageType: "" };
 
+const APPS_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbwHjV5pp2wNKtea7NTNl61Rz0o-MDTb7V1myqjrho5sQ6T4zi4WtKYmGmEBXbzDrM9ADg/exec";
+
 const fieldClass =
   "mt-1.5 block w-full rounded-md border border-input bg-background px-3 py-2.5 text-base text-foreground placeholder:text-muted-foreground/70 focus:border-brand-deep focus:outline-none";
 const labelClass = "block text-sm font-bold text-ink";
@@ -65,24 +68,48 @@ export function HeroQuoteForm() {
       requirement: values.signageType,
     });
 
-    const { error } = await supabase.from("quote_leads").insert({
-      full_name: values.fullName.trim(),
+    const attribution = getAttribution();
+    const payload = {
+      name: values.fullName.trim(),
       phone: values.phone.trim(),
       email: values.email.trim(),
-      business_name: values.brand.trim(),
-      signage_requirement: values.signageType,
-      size_ft: values.size.trim() || null,
-      page_url: window.location.href,
-      referrer: document.referrer || null,
-      ...getAttribution(),
-    });
+      brand: values.brand.trim(),
+      size: values.size.trim(),
+      type: values.signageType,
+      source: "Meta Ads",
+      utm_source: attribution.utm_source ?? "",
+      utm_medium: attribution.utm_medium ?? "",
+      utm_campaign: attribution.utm_campaign ?? "",
+      utm_content: attribution.utm_content ?? "",
+    };
 
-    if (error) {
+    try {
+      const response = await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) throw new Error(`Status ${response.status}`);
+    } catch (error) {
       console.error(error);
       setStatus("error");
       return;
     }
 
+    // Backup copy in the site's own lead store; never blocks the user.
+    void supabase.from("quote_leads").insert({
+      full_name: payload.name,
+      phone: payload.phone,
+      email: payload.email,
+      business_name: payload.brand,
+      signage_requirement: payload.type,
+      size_ft: payload.size || null,
+      page_url: window.location.href,
+      referrer: document.referrer || null,
+      ...attribution,
+    });
+
+    setValues(EMPTY);
     setStatus("success");
     trackEvent("lead_success", { location: "hero_form", requirement: values.signageType });
   }
