@@ -98,8 +98,8 @@ export function Services() {
           <CarouselNext className="hidden md:flex" />
         </Carousel>
 
-        <div className="mt-10 flex justify-center px-1 md:px-12">
-          <QuoteButton location="services" className="px-9 py-4 text-lg" />
+        <div className="mt-10 px-1 md:px-12">
+          <QuoteButton location="services" className="w-full px-9 py-4 text-lg" />
         </div>
       </div>
     </section>
