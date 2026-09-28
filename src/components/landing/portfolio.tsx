@@ -28,11 +28,13 @@ const PROJECTS = [
   },
   {
     image: projBar,
+    contain: true,
     alt: "Cream 3D channel letters reading D'Naples pizza mounted above a glass shopfront at dusk",
     caption: "                                D'Naples Pizza ",
   },
   {
     image: projMonk,
+    contain: true,
     alt: "Warm orange LED neon sign reading The taste of Bihar glowing on a wall at night",
     caption: "                                The Taste of Bihar",
   },
