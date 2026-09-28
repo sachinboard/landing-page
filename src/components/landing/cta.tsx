@@ -1,6 +1,7 @@
-import { MessageCircle, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import type { ReactNode } from "react";
 
+import { WhatsAppIcon } from "@/components/landing/whatsapp-icon";
 import { BUSINESS, whatsappHref } from "@/lib/business";
 import { cn } from "@/lib/utils";
 import { trackEvent } from "@/lib/tracking";
@@ -52,7 +53,7 @@ export function WhatsAppButton({
         className,
       )}
     >
-      <MessageCircle aria-hidden="true" className="size-4 shrink-0" />
+      <WhatsAppIcon className="size-4 shrink-0" />
       WhatsApp Us
     </a>
   );

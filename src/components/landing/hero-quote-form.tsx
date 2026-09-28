@@ -126,7 +126,7 @@ export function HeroQuoteForm() {
           <FieldError id="hero-fullName-error" message={errors.fullName} />
         </div>
 
-        <div className="min-w-0">
+        <div className="min-w-0 sm:col-span-2">
           <label htmlFor="hero-phone" className={labelClass}>
             Phone number <span className="text-destructive">*</span>
           </label>
