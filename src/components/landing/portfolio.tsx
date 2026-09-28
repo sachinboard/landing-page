@@ -10,7 +10,9 @@ import projBiharAsset from "@/assets/portfolio/taste-of-bihar.webp.asset.json";
 const projMonk = projBiharAsset.url;
 import projDuck from "@/assets/ls-svc-3d.webp";
 
-const PROJECTS = [
+type Project = { image: string; alt: string; caption: string; contain?: boolean };
+
+const PROJECTS: Project[] = [
   {
     image: projGym,
     alt: "Gold's Gym interior brick wall with black metal grid, circular Gold's Gym logo and large yellow 3D letters reading Can't Stop Won't Stop above a wooden floor",
@@ -67,7 +69,9 @@ export function Portfolio() {
                   alt={project.alt}
                   loading="lazy"
                   decoding="async"
-                  className={`aspect-[4/3] w-full rounded-lg bg-ink-muted/10 ${project.image === projGym ? "object-contain" : "object-cover"}`}
+                  className={`aspect-[4/3] w-full rounded-lg bg-ink-muted/10 ${
+                    project.contain || project.image === projGym ? "object-contain" : "object-cover"
+                  }`}
                 />
                 <figcaption className="mt-2.5 text-sm text-ink-muted">{project.caption}</figcaption>
               </figure>
