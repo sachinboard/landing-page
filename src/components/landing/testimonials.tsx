@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import { Star } from "lucide-react";
 
 import r23 from "@/assets/reviews/r23.webp.asset.json";
