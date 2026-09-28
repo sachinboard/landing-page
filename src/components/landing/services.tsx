@@ -63,7 +63,7 @@ const SERVICES = [
 export function Services() {
   return (
     <section id="services" className="bg-background" aria-labelledby="services-title">
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-20">
         <p className="text-xs font-bold tracking-[0.18em] text-brand-deep uppercase">
           What we manufacture
         </p>
@@ -74,7 +74,7 @@ export function Services() {
           Every board is made as per the brand guidelines, accurate measurements and accounting for proper light around the signage. It's a curated service for your brand, not a generic catalog and trusted by 100+ brands in Bangalore.
         </p>
 
-        <Carousel opts={{ align: "start", loop: true }} className="mt-10 px-1 md:px-12">
+        <Carousel opts={{ align: "start", loop: true }} className="mt-6 px-1 md:mt-10 md:px-12">
           <CarouselContent>
             {SERVICES.map((service) => (
               <CarouselItem key={service.title} className="basis-[85%] md:basis-[45%]">
@@ -100,7 +100,7 @@ export function Services() {
           <CarouselNext className="hidden md:flex" />
         </Carousel>
 
-        <div className="mt-10 px-1 md:px-12">
+        <div className="mt-6 px-1 md:mt-10 md:px-12">
           <QuoteButton location="services" className="w-full px-9 py-4 text-lg" />
         </div>
       </div>
