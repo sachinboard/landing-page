@@ -19,6 +19,7 @@ const SERVICES = [
     image: svc3d,
     alt: "Fit24 Fitness Club backlit 3D sign board with orange and white letters and Kannada lettering on a dark facade at night",
     fit: "contain",
+    bg: "bg-matte",
     useCase:
       "For restaurants, cafés and retail stores that need depth and presence on a busy main road.",
   },
@@ -83,7 +84,7 @@ export function Services() {
                     alt={service.alt}
                     loading="lazy"
                     decoding="async"
-                    className={`w-2/5 shrink-0 self-stretch bg-muted min-h-[200px] ${service.fit === "contain" ? "object-contain" : "object-cover"}`}
+                    className={`w-2/5 shrink-0 self-stretch ${service.bg || "bg-muted"} min-h-[200px] ${service.fit === "contain" ? "object-contain" : "object-cover"}`}
                   />
                   <div className="flex flex-1 flex-col justify-center p-5 md:p-6">
                     <h3 className="font-display text-xl text-ink md:text-2xl">{service.title}</h3>
