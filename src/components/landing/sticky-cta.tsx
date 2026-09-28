@@ -1,7 +1,11 @@
-import { MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
 
-import { whatsappHref } from "@/lib/business";
+import { WhatsAppIcon } from "@/components/landing/whatsapp-icon";
+import { BUSINESS, whatsappHref } from "@/lib/business";
 import { trackEvent } from "@/lib/tracking";
+
+const iconButton =
+  "inline-flex size-12 shrink-0 items-center justify-center rounded-md border border-input text-ink";
 
 /** Compact mobile-only action bar. Hidden on md+ where inline CTAs are visible. */
 export function StickyCta() {
@@ -13,15 +17,25 @@ export function StickyCta() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackEvent("whatsapp_click", { location: "sticky_bar" })}
-          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md border border-input px-4 py-3 text-sm font-bold text-ink"
+          aria-label="Message us on WhatsApp"
+          title="Message us on WhatsApp"
+          className={iconButton}
         >
-          <MessageCircle aria-hidden="true" className="size-4" />
-          WhatsApp
+          <WhatsAppIcon className="size-5" />
+        </a>
+        <a
+          href={`tel:${BUSINESS.phoneDial}`}
+          onClick={() => trackEvent("phone_click", { location: "sticky_bar" })}
+          aria-label={`Call ${BUSINESS.phoneDisplay}`}
+          title={`Call ${BUSINESS.phoneDisplay}`}
+          className={iconButton}
+        >
+          <Phone aria-hidden="true" className="size-5" />
         </a>
         <a
           href="#quote"
           onClick={() => trackEvent("cta_click", { cta: "get_a_free_quote", location: "sticky_bar" })}
-          className="inline-flex flex-1 items-center justify-center rounded-md bg-brand px-4 py-3 text-sm font-bold text-brand-foreground"
+          className="inline-flex h-12 flex-1 items-center justify-center rounded-md bg-brand px-3 text-sm font-bold text-brand-foreground"
         >
           Get a Free Quote
         </a>
