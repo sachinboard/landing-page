@@ -27,9 +27,9 @@ export function Testimonials() {
   return (
     <section className="bg-ink text-ink-foreground" aria-labelledby="testimonials-title">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-20">
-        <p className="text-xs font-bold tracking-[0.18em] text-brand uppercase">Google reviews</p>
+        <p className="text-xs font-bold tracking-[0.18em] text-brand uppercase">GOOGLE REVIEWS</p>
         <h2 id="testimonials-title" className="font-display mt-3 max-w-2xl text-3xl sm:text-4xl">
-          What our clients say
+          WHAT OUR CLIENTS SAY
         </h2>
 
         <Carousel opts={{ align: "start", loop: true }} className="mt-10 px-1 md:px-12">
