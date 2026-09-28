@@ -17,14 +17,14 @@ const SERVICES = [
   {
     title: "3D Sign Boards",
     image: svc3d,
-    alt: "Green 3D sign board with raised gold letters installed outside Dizzy Duck in Bengaluru",
+    alt: "Gold 3D Kannada letter sign board glowing on a dark hotel facade in Bengaluru",
     useCase:
       "For restaurants, cafés and retail stores that need depth and presence on a busy main road.",
   },
   {
     title: "2D LED Sign Boards",
     image: svc2d,
-    alt: "Purple 2D LED sign board with illuminated logo artwork for Chill'd Monk ice cream",
+    alt: "Green and pink 2D LED sign board with neon lettering for Ginza pub and lounge at night",
     useCase:
       "For shops, clinics and offices wanting a clean, bright name board that reads well day and night.",
   },
@@ -52,7 +52,7 @@ const SERVICES = [
   {
     title: "Digital Video Boards & Video Walls",
     image: svcVideoWall,
-    alt: "Large illuminated LED display board for a Go Kart entertainment venue at night",
+    alt: "Bright red and blue LED neon sign reading The Lazy Turtle glowing against a dark wall",
     useCase:
       "For entertainment venues, events and large-format outdoor advertising that needs motion.",
   },
