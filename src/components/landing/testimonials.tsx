@@ -28,9 +28,13 @@ const REVIEWS: { name: string; when: string; photo?: string; text: string }[] = 
 export function Testimonials() {
   const autoplayRef = useRef<ReturnType<typeof Autoplay> | null>(null);
   if (!autoplayRef.current) {
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     autoplayRef.current = Autoplay({
       delay: 4800,
       jump: false,
+      autoplay: !prefersReducedMotion,
       stopOnMouseEnter: true,
       stopOnFocusIn: true,
       stopOnInteraction: false,
