@@ -26,6 +26,52 @@ const REVIEWS: { name: string; when: string; photo?: string; text: string }[] = 
 ];
 
 export function Testimonials() {
+  const autoplayRef = useRef<ReturnType<typeof Autoplay> | null>(null);
+  if (!autoplayRef.current) {
+    autoplayRef.current = Autoplay({
+      delay: 4800,
+      jump: false,
+      stopOnMouseEnter: true,
+      stopOnFocusIn: true,
+      stopOnInteraction: false,
+    });
+  }
+  const autoplay = autoplayRef.current;
+  const regionRef = useRef<HTMLDivElement>(null);
+
+  // Stay still for people who ask their device to reduce motion, and only run
+  // the slider while the reviews are actually on screen.
+  useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reduceMotion.matches) {
+      autoplay.stop();
+      return;
+    }
+    const onReduceChange = (event: MediaQueryListEvent) => {
+      if (event.matches) autoplay.stop();
+      else autoplay.play();
+    };
+    reduceMotion.addEventListener("change", onReduceChange);
+
+    const node = regionRef.current;
+    const observer =
+      node && typeof IntersectionObserver !== "undefined"
+        ? new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) autoplay.play();
+              else autoplay.stop();
+            },
+            { threshold: 0.2 },
+          )
+        : null;
+    if (node && observer) observer.observe(node);
+
+    return () => {
+      reduceMotion.removeEventListener("change", onReduceChange);
+      observer?.disconnect();
+    };
+  }, [autoplay]);
+
   return (
     <section className="bg-ink text-ink-foreground" aria-labelledby="testimonials-title">
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 md:py-20">
