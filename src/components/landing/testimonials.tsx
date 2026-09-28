@@ -34,7 +34,7 @@ export function Testimonials() {
     autoplayRef.current = Autoplay({
       delay: 4800,
       jump: false,
-      autoplay: !prefersReducedMotion,
+      playOnInit: !prefersReducedMotion,
       stopOnMouseEnter: true,
       stopOnFocusIn: true,
       stopOnInteraction: false,
