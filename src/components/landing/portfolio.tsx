@@ -1,4 +1,4 @@
-import projGymAsset from "@/assets/golds-gym-wall.png.asset.json";
+import projGymAsset from "@/assets/golds-gym-wall.jpg.asset.json";
 const projGym = projGymAsset.url;
 import projPet from "@/assets/ls-proj-2d.jpg";
 import projCafe from "@/assets/ls-svc-videoled.jpg";
@@ -9,7 +9,7 @@ import projDuck from "@/assets/ls-svc-3d.jpg";
 const PROJECTS = [
   {
     image: projGym,
-    alt: "Gold's Gym interior wall with large yellow 3D letters reading Can't Stop Won't Stop",
+    alt: "Gold's Gym interior brick wall with black metal grid, circular Gold's Gym logo and large yellow 3D letters reading Can't Stop Won't Stop above a wooden floor",
     caption: "                                Gold's Gym ",
   },
   {
