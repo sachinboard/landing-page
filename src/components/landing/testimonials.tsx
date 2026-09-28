@@ -26,9 +26,9 @@ const REVIEWS: { name: string; when: string; photo?: string; text: string }[] = 
 export function Testimonials() {
   return (
     <section className="bg-ink text-ink-foreground" aria-labelledby="testimonials-title">
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 md:py-20">
         <p className="text-xs font-bold tracking-[0.18em] text-brand uppercase">GOOGLE REVIEWS</p>
-        <h2 id="testimonials-title" className="font-display mt-3 max-w-2xl text-3xl sm:text-4xl">
+        <h2 id="testimonials-title" className="font-display mt-3 max-w-2xl text-2xl sm:text-4xl">
           A GLIMPSE OF OUR GOOGLE REVIEWS
         </h2>
 

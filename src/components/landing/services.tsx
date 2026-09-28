@@ -63,11 +63,11 @@ const SERVICES = [
 export function Services() {
   return (
     <section id="services" className="bg-background" aria-labelledby="services-title">
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 md:py-20">
         <p className="text-xs font-bold tracking-[0.18em] text-brand-deep uppercase">
           What we manufacture
         </p>
-        <h2 id="services-title" className="font-display mt-3 max-w-2xl text-3xl sm:text-4xl">
+        <h2 id="services-title" className="font-display mt-3 max-w-2xl text-2xl sm:text-4xl">
           Choose your signage
         </h2>
         <p className="mt-4 max-w-2xl text-base text-muted-foreground">
@@ -87,7 +87,7 @@ export function Services() {
                     className={`w-2/5 shrink-0 self-stretch ${service.bg || "bg-muted"} min-h-[200px] ${service.fit === "contain" ? "object-contain" : "object-cover"}`}
                   />
                   <div className="flex flex-1 flex-col justify-center p-5 md:p-6">
-                    <h3 className="font-display text-xl text-ink md:text-2xl">{service.title}</h3>
+                    <h3 className="font-display text-lg text-ink md:text-2xl">{service.title}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
                       {service.useCase}
                     </p>
