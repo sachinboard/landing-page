@@ -50,16 +50,13 @@ const PROJECTS: Project[] = [
 export function Portfolio() {
   return (
     <section id="work" className="bg-ink text-ink-foreground">
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-20">
         <p className="text-xs font-bold tracking-[0.18em] text-brand uppercase">Recent work</p>
         <h2 className="font-display mt-3 max-w-2xl text-3xl sm:text-4xl">
           Boards we have built and installed
         </h2>
-        <p className="mt-4 max-w-2xl text-base text-ink-muted">
-          {"\n"}
-        </p>
 
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-6 grid grid-cols-2 gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {PROJECTS.map((project) => (
             <li key={project.caption} className="min-w-0">
               <figure>
@@ -72,7 +69,7 @@ export function Portfolio() {
                     project.contain || project.image === projGym ? "object-contain" : "object-cover"
                   }`}
                 />
-                <figcaption className="mt-2.5 text-sm text-ink-muted">{project.caption}</figcaption>
+                <figcaption className="mt-1.5 text-sm text-ink-muted sm:mt-2.5">{project.caption}</figcaption>
               </figure>
             </li>
           ))}
