@@ -3,7 +3,7 @@ const FACTS = [
   { value: "5-year", label: "Unconditional warranty on our boards" },
   { value: "30", label: "In-house design & production team" },
   { value: "5,000 sq. ft.", label: "Manufacturing facility in Bengaluru" },
-  { value: "SERVICE ISSUES ", label: " Resolved in 48–72 hours" },
+  { value: " SERVICE ", label: " Resolved in 48–72 hours" },
 ];
 
 export function TrustStrip() {
