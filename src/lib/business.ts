@@ -32,7 +32,7 @@ export const whatsappHref = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURI
  */
 export const GOOGLE_REVIEWS: { rating: number; count: string; profileUrl?: string } | null = {
   rating: 4.9,
-  count: "330",
+  count: "350",
 };
 
 /** Client brands named on theboardcompany.in. Text only - no logo files supplied. */
