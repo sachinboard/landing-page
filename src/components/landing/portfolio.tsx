@@ -19,22 +19,22 @@ const PROJECTS = [
   {
     image: projPet,
     alt: "Illuminated orange and blue 3D letters for Gilly's Super Bar mounted on a black slatted storefront board",
-    caption: "                                  Tug of Fur ",
+    caption: "                                  Gilly's Super Bar",
   },
   {
     image: projCafe,
     alt: "Backlit sign board at night with glowing white Kannada and English lettering for Grovies, a dine-in sports bistro",
-    caption: "                                Goofy's Cafe ",
+    caption: "                                     Grovies",
   },
   {
     image: projBar,
     alt: "Cream 3D channel letters reading D'Naples pizza mounted above a glass shopfront at dusk",
-    caption: "                               Gilly's Super Bar",
+    caption: "                                D'Naples Pizza ",
   },
   {
     image: projMonk,
     alt: "Warm orange LED neon sign reading The taste of Bihar glowing on a wall at night",
-    caption: "                                  Chill'd Monk ",
+    caption: "                                The Taste of Bihar",
   },
   {
     image: projDuck,
