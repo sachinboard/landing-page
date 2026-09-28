@@ -38,12 +38,12 @@ const PROJECTS: Project[] = [
     image: projMonk,
     contain: true,
     alt: "Warm orange LED neon sign reading The taste of Bihar glowing on a wall at night",
-    caption: "                                The Taste of Bihar",
+    caption: "                                 Taste of Bihar",
   },
   {
     image: projDuck,
     alt: "Green 3D sign board with raised gold letters for Dizzy Duck",
-    caption: "                                     Dizzy Duck ",
+    caption: "                                    Fit24 Fitness Club",
   },
 ];
 
