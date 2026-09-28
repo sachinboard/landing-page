@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import { Star } from "lucide-react";
 
 import r23 from "@/assets/reviews/r23.webp.asset.json";
@@ -24,6 +26,52 @@ const REVIEWS: { name: string; when: string; photo?: string; text: string }[] = 
 ];
 
 export function Testimonials() {
+  const autoplayRef = useRef<ReturnType<typeof Autoplay> | null>(null);
+  if (!autoplayRef.current) {
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    autoplayRef.current = Autoplay({
+      delay: 4800,
+      jump: false,
+      playOnInit: !prefersReducedMotion,
+      stopOnMouseEnter: true,
+      stopOnFocusIn: true,
+      stopOnInteraction: false,
+    });
+  }
+  const autoplay = autoplayRef.current;
+  const regionRef = useRef<HTMLDivElement>(null);
+
+  // Stay still for people who ask their device to reduce motion, and only run
+  // the slider while the reviews are actually on screen.
+  useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const node = regionRef.current;
+    const observer =
+      node && typeof IntersectionObserver !== "undefined"
+        ? new IntersectionObserver(
+            ([entry]) => {
+              if (entry?.isIntersecting && !reduceMotion.matches) autoplay.play();
+              else autoplay.stop();
+            },
+            { threshold: 0.2 },
+          )
+        : null;
+    if (node && observer) observer.observe(node);
+
+    const onReduceChange = (event: MediaQueryListEvent) => {
+      if (event.matches) autoplay.stop();
+      else autoplay.play();
+    };
+    reduceMotion.addEventListener("change", onReduceChange);
+
+    return () => {
+      reduceMotion.removeEventListener("change", onReduceChange);
+      observer?.disconnect();
+    };
+  }, [autoplay]);
+
   return (
     <section className="bg-ink text-ink-foreground" aria-labelledby="testimonials-title">
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 md:py-20">
@@ -32,7 +80,12 @@ export function Testimonials() {
           A GLIMPSE OF OUR GOOGLE REVIEWS
         </h2>
 
-        <Carousel opts={{ align: "start", loop: true }} className="mt-6 px-1 md:mt-10 md:px-12">
+        <Carousel
+          ref={regionRef}
+          plugins={[autoplay]}
+          opts={{ align: "start", loop: true }}
+          className="mt-6 px-1 md:mt-10 md:px-12"
+        >
           <CarouselContent>
             {REVIEWS.map((r) => (
               <CarouselItem key={r.name} className="basis-[88%] sm:basis-1/2 lg:basis-1/3">
