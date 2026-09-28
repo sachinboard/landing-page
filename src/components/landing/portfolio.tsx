@@ -50,9 +50,9 @@ const PROJECTS: Project[] = [
 export function Portfolio() {
   return (
     <section id="work" className="bg-ink text-ink-foreground">
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 md:py-20">
         <p className="text-xs font-bold tracking-[0.18em] text-brand uppercase">Recent work</p>
-        <h2 className="font-display mt-3 max-w-2xl text-3xl sm:text-4xl">
+        <h2 className="font-display mt-3 max-w-2xl text-2xl sm:text-4xl">
           Boards we have built and installed
         </h2>
 

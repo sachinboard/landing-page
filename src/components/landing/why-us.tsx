@@ -36,15 +36,15 @@ const REASONS = [
 export function WhyUs() {
   return (
     <section className="bg-cream">
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 md:py-20">
         <p className="text-xs font-bold tracking-[0.18em] text-brand-deep uppercase">
           Why businesses choose us
         </p>
-        <h2 className="font-display mt-3 max-w-2xl text-3xl sm:text-4xl">
+        <h2 className="font-display mt-3 max-w-2xl text-2xl sm:text-4xl">
           Claims we can actually back up
         </h2>
 
-        <ul className="mt-6 grid gap-x-8 gap-y-6 sm:mt-10 md:gap-y-8 lg:grid-cols-3">
+        <ul className="mt-5 grid gap-x-8 gap-y-5 sm:mt-10 md:gap-y-8 lg:grid-cols-3">
           {REASONS.map((reason) => (
             <li key={reason.title} className="flex min-w-0 gap-4">
               <span className="mt-0.5 grid size-10 shrink-0 place-items-center rounded-md bg-brand text-brand-foreground">

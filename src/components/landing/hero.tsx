@@ -15,7 +15,7 @@ export function Hero() {
             </span>
           </p>
 
-          <h1 className="font-display mt-5 max-w-xl text-4xl leading-[1.12] sm:text-[2.75rem] lg:text-5xl">
+          <h1 className="font-display mt-5 max-w-xl text-3xl leading-[1.14] sm:text-[2.75rem] lg:text-5xl">
             <span className="block">Custom sign boards that make your storefront</span>
             <span className="mt-3 block leading-[1.2]">
               <span className="highlight-mark text-brand-foreground">impossible to miss</span>
