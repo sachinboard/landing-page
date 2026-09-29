@@ -29,28 +29,40 @@ export const ATTRIBUTION_KEYS = [
 
 export type Attribution = Partial<Record<(typeof ATTRIBUTION_KEYS)[number], string>>;
 
-const STORAGE_KEY = "tbc_attribution";
-
-/** Reads UTM/click IDs from the URL, persisting them for the whole session. */
+/**
+ * Reads UTM/click IDs from the URL, persisting them for the whole session.
+ *
+ * Each parameter is stored under its own sessionStorage key (utm_source,
+ * utm_medium, utm_campaign, utm_content, gclid, ...). A value present in the
+ * URL updates its key; a value absent from the URL falls back to the stored
+ * value — a stored value is never overwritten with an empty one.
+ */
 export function getAttribution(): Attribution {
   if (typeof window === "undefined") return {};
   const params = new URLSearchParams(window.location.search);
-  const fromUrl: Attribution = {};
-  for (const key of ATTRIBUTION_KEYS) {
-    const value = params.get(key);
-    if (value) fromUrl[key] = value.slice(0, 300);
-  }
+  const attribution: Attribution = {};
 
   try {
-    if (Object.keys(fromUrl).length > 0) {
-      window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(fromUrl));
-      return fromUrl;
+    for (const key of ATTRIBUTION_KEYS) {
+      const fromUrl = params.get(key);
+      if (fromUrl) {
+        const value = fromUrl.slice(0, 300);
+        if (window.sessionStorage.getItem(key) !== value) {
+          window.sessionStorage.setItem(key, value);
+        }
+      }
+      const value = fromUrl ? fromUrl.slice(0, 300) : window.sessionStorage.getItem(key);
+      if (value) attribution[key] = value;
     }
-    const stored = window.sessionStorage.getItem(STORAGE_KEY);
-    return stored ? (JSON.parse(stored) as Attribution) : {};
   } catch {
-    return fromUrl;
+    // sessionStorage unavailable - fall back to whatever was in the URL.
+    for (const key of ATTRIBUTION_KEYS) {
+      const value = params.get(key);
+      if (value) attribution[key] = value.slice(0, 300);
+    }
   }
+
+  return attribution;
 }
 
 /** Meta Pixel standard event names mapped from our internal event names. */
