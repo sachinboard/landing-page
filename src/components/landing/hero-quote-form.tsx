@@ -118,23 +118,8 @@ export function HeroQuoteForm() {
       ...attribution,
     });
 
-    setValues(EMPTY);
-    setStatus("success");
     trackEvent("lead_success", { location: "hero_form", requirement: values.signageType });
-  }
-
-  if (status === "success") {
-    return (
-      <div className="rounded-xl bg-background p-6 text-center shadow-2xl sm:p-8">
-        <CheckCircle2 aria-hidden="true" className="mx-auto size-12 text-brand-deep" />
-        <h2 className="font-display mt-4 text-2xl text-ink" role="status">
-          Thank you - your request is in
-        </h2>
-        <p className="mt-3 text-sm text-muted-foreground">
-          Our team will review your requirement and get back to you with advice and a quotation.
-        </p>
-      </div>
-    );
+    goToThankYou(attribution);
   }
 
   return (
