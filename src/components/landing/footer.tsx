@@ -1,8 +1,14 @@
 import logo from "@/assets/logo-wordmark.webp";
+import { useLocation } from "@tanstack/react-router";
 import { PhoneLink } from "@/components/landing/cta";
 import { BUSINESS } from "@/lib/business";
 
 export function Footer() {
+  // On the landing page the quote form is an anchor on this page; from any
+  // other page the same link has to go to the home page first.
+  const { pathname } = useLocation();
+  const quoteHref = pathname === "/" ? "#quote" : "/#quote";
+
   return (
     <footer className="bg-ink text-ink-foreground">
       <div className="mx-auto grid max-w-6xl gap-5 px-4 py-8 sm:px-6 md:grid-cols-3 md:gap-8 md:py-10">
@@ -36,7 +42,7 @@ export function Footer() {
           <h2 className="text-xs font-bold tracking-[0.18em] text-brand uppercase">More</h2>
           <ul className="mt-3 space-y-2 text-sm text-ink-muted">
             <li>
-              <a href="#quote" className="hover:text-ink-foreground">
+              <a href={quoteHref} className="hover:text-ink-foreground">
                 Get a free quote
               </a>
             </li>
