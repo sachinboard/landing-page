@@ -81,6 +81,7 @@ export function HeroQuoteForm() {
       utm_medium: attribution.utm_medium ?? "",
       utm_campaign: attribution.utm_campaign ?? "",
       utm_content: attribution.utm_content ?? "",
+      gclid: attribution.gclid ?? "",
     };
 
     try {
