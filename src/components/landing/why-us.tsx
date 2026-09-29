@@ -4,32 +4,32 @@ const REASONS = [
   {
     icon: BadgeCheck,
     title: "ISO 9001:2005 certified",
-    body: "Quality-certified manufacturing processes - the certification The Board Company holds for its signage production in Bangalore.",
+    body: "Quality-certified signage manufacturing in Bangalore.",
   },
   {
     icon: Factory,
     title: "Made in our own facility",
-    body: "A 30-member professional team works out of a 5,000 sq. ft. workspace, so design, fabrication and finishing stay under one roof.",
+    body: "30-member team working from our 5,000 sq. ft. facility.",
   },
   {
     icon: ShieldCheck,
     title: "5-year unconditional warranty",
-    body: "Every board we manufacture carries an unconditional 5-year warranty (excludes physical damage).",
+    body: "Every board comes with a 5-year warranty, excluding physical damage.",
   },
   {
     icon: Timer,
     title: "48–72 hour service response",
-    body: "If something goes wrong with your signage, issues are attended to and resolved within 48 to 72 hours.",
+    body: "Signage issues are attended to and resolved within 48–72 hours.",
   },
   {
     icon: Wrench,
-    title: "Installation & maintenance  included",
-    body: "We install the signage efficiently with the help of active design & logistics field agents",
+    title: "Full Installation & maintenance  ",
+    body: "Professional installation with dedicated design, logistics and field support.",
   },
   {
     icon: Factory,
     title: "2000+ projects delivered",
-    body: "Since 2020 - after two years of R&D - we have completed over 2,000 signage projects for brands across Bengaluru.",
+    body: "Over 2,000 signage projects completed for brands across Bengaluru since 2020.",
   },
 ];
 
