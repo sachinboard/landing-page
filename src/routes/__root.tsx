@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -72,6 +72,14 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+/**
+ * Meta Pixel (ID 2087656082122861). Loads on every page and sends PageView.
+ * Conversion events (Lead, Contact, InitiateCheckout) are forwarded by
+ * src/lib/tracking.ts to `window.fbq` as visitors interact with the page.
+ */
+const META_PIXEL_ID = "2087656082122861";
+const META_PIXEL_SCRIPT = `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`;
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -93,6 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
+    scripts: [{ children: META_PIXEL_SCRIPT }],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -108,6 +117,15 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            alt=""
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
         <Scripts />
       </body>
     </html>
@@ -116,6 +134,16 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+
+  // The pixel init sends PageView once on first load; re-send it on every
+  // in-app navigation so the thank-you page and other routes count as views.
+  useEffect(() => {
+    return router.subscribe("onResolved", ({ fromLocation }) => {
+      if (!fromLocation) return;
+      window.fbq?.("track", "PageView");
+    });
+  }, [router]);
 
   return (
     <QueryClientProvider client={queryClient}>
