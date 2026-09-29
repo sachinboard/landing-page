@@ -9,7 +9,7 @@ const STEPS = [
   },
   {
     title: "Design & quotation",
-    body: "We create a complimentary mockup from your design, with production starting after approval.",
+    body: "We create a mockup from your design, with production starting after approval.",
   },
   {
     title: "Production & installation",
