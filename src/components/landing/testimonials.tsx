@@ -74,7 +74,7 @@ export function Testimonials() {
 
   return (
     <section className="bg-ink text-ink-foreground" aria-labelledby="testimonials-title">
-      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-7 sm:px-6 md:py-20">
         <p className="text-xs font-bold tracking-[0.18em] text-brand uppercase">GOOGLE REVIEWS</p>
         <h2 id="testimonials-title" className="font-display mt-3 max-w-2xl text-2xl sm:text-4xl">
           A GLIMPSE OF OUR GOOGLE REVIEWS
@@ -84,12 +84,12 @@ export function Testimonials() {
           ref={regionRef}
           plugins={[autoplay]}
           opts={{ align: "start", loop: true }}
-          className="mt-6 px-1 md:mt-10 md:px-12"
+          className="mt-5 px-1 md:mt-10 md:px-12"
         >
           <CarouselContent>
             {REVIEWS.map((r) => (
               <CarouselItem key={r.name} className="basis-[88%] sm:basis-1/2 lg:basis-1/3">
-                <article className="flex h-full flex-col rounded-lg bg-card p-4 text-card-foreground sm:p-6">
+                <article className="flex h-full flex-col rounded-lg bg-card p-3.5 text-card-foreground sm:p-6">
                   <header className="flex items-center gap-3">
                     {r.photo ? (
                       <img src={r.photo} alt="" width={48} height={48} loading="lazy" className="size-12 rounded-full" />
@@ -108,7 +108,7 @@ export function Testimonials() {
                       <Star key={i} aria-hidden="true" className="size-4 fill-brand text-brand-deep" />
                     ))}
                   </div>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">“{r.text}”</p>
+                  <p className="mt-2.5 text-[0.8125rem] leading-relaxed text-muted-foreground sm:mt-3 sm:text-sm">“{r.text}”</p>
                 </article>
               </CarouselItem>
             ))}
