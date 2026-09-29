@@ -1,5 +1,5 @@
 import logo from "@/assets/logo-wordmark.webp";
-import { useLocation } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { PhoneLink } from "@/components/landing/cta";
 import { BUSINESS } from "@/lib/business";
 

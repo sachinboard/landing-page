@@ -117,6 +117,15 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            alt=""
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
         <Scripts />
       </body>
     </html>
@@ -125,6 +134,16 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+
+  // The pixel init sends PageView once on first load; re-send it on every
+  // in-app navigation so the thank-you page and other routes count as views.
+  useEffect(() => {
+    return router.subscribe("onResolved", ({ fromLocation }) => {
+      if (!fromLocation) return;
+      window.fbq?.("track", "PageView");
+    });
+  }, [router]);
 
   return (
     <QueryClientProvider client={queryClient}>
