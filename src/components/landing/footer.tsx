@@ -67,8 +67,9 @@ export function Footer() {
               </a>
             </li>
             <li>
-              {/* Placeholder: replace with the published Privacy Policy URL. */}
-              <span className="text-ink-muted/70">Privacy Policy - coming soon</span>
+              <Link to="/privacy" className="hover:text-ink-foreground">
+                Privacy Policy
+              </Link>
             </li>
             <li>
               {/* Placeholder: replace with the published Terms URL. */}
