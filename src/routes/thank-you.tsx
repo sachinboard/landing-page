@@ -33,7 +33,8 @@ export const Route = createFileRoute("/thank-you")({
       const value = search[key];
       if (typeof value === "string" && value) next[key] = value.slice(0, 300);
     }
-    if (search.from === "hero_form" || search.from === "quote_form") next.from = search.from;
+    const from = search["from"];
+    if (from === "hero_form" || from === "quote_form") next.from = from;
     return next;
   },
   head: () => ({
