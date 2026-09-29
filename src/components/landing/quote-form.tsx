@@ -122,29 +122,8 @@ export function QuoteForm() {
       return;
     }
 
-    setStatus("success");
     trackEvent("lead_success", { requirement: values.signageRequirement });
-  }
-
-  if (status === "success") {
-    return (
-      <section id="quote" className="bg-background">
-        <div className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6 md:py-24">
-          <CheckCircle2 aria-hidden="true" className="mx-auto size-14 text-brand-deep" />
-          <h2 className="font-display mt-5 text-3xl sm:text-4xl" role="status">
-            Thank you - your request is in
-          </h2>
-          <p className="mt-4 text-base text-muted-foreground">
-            Our team will get in touch on the phone number you shared to understand your signage
-            requirement and prepare a quotation. If it is urgent, message or call us directly.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <WhatsAppButton location="success_screen" variant="dark" className="px-6 py-3.5 text-base" />
-            <PhoneLink location="success_screen" className="px-4 py-3 text-base text-ink" />
-          </div>
-        </div>
-      </section>
-    );
+    goToThankYou(attribution);
   }
 
   return (
