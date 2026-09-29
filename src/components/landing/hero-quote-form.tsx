@@ -1,9 +1,10 @@
 import { useRef, useState } from "react";
-import { CheckCircle2, Loader2 } from "lucide-react";
+import { useNavigate } from "@tanstack/react-router";
+import { Loader2 } from "lucide-react";
 
 import { supabase } from "@/integrations/supabase/client";
 import { HERO_SIGNAGE_TYPES } from "@/lib/business";
-import { getAttribution, trackEvent } from "@/lib/tracking";
+import { getAttribution, markLeadSubmitted, trackEvent, type Attribution } from "@/lib/tracking";
 import { cn } from "@/lib/utils";
 
 type Field = "fullName" | "phone" | "email" | "brand" | "size" | "signageType";
@@ -20,12 +21,19 @@ const fieldClass =
 const labelClass = "block text-sm font-bold text-ink";
 
 export function HeroQuoteForm() {
+  const navigate = useNavigate();
   const [values, setValues] = useState<Values>(EMPTY);
   const [accepted, setAccepted] = useState(true);
   const [errors, setErrors] = useState<Errors>({});
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
   const startedRef = useRef(false);
   const honeypotRef = useRef<HTMLInputElement>(null);
+
+  /** Redirects to the thank-you page, carrying the traffic parameters along. */
+  function goToThankYou(attribution: Attribution) {
+    markLeadSubmitted();
+    navigate({ to: "/thank-you", search: { ...attribution, from: "hero_form" } });
+  }
 
   function update(field: Field, value: string) {
     if (!startedRef.current) {
@@ -38,7 +46,7 @@ export function HeroQuoteForm() {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (status === "submitting" || status === "success") return;
+    if (status === "submitting") return;
 
     const next: Errors = {};
     if (values.fullName.trim().length < 2) next.fullName = "Please enter your name.";
@@ -58,7 +66,7 @@ export function HeroQuoteForm() {
     }
 
     if (honeypotRef.current?.value) {
-      setStatus("success");
+      goToThankYou(getAttribution());
       return;
     }
 
@@ -110,23 +118,8 @@ export function HeroQuoteForm() {
       ...attribution,
     });
 
-    setValues(EMPTY);
-    setStatus("success");
     trackEvent("lead_success", { location: "hero_form", requirement: values.signageType });
-  }
-
-  if (status === "success") {
-    return (
-      <div className="rounded-xl bg-background p-6 text-center shadow-2xl sm:p-8">
-        <CheckCircle2 aria-hidden="true" className="mx-auto size-12 text-brand-deep" />
-        <h2 className="font-display mt-4 text-2xl text-ink" role="status">
-          Thank you - your request is in
-        </h2>
-        <p className="mt-3 text-sm text-muted-foreground">
-          Our team will review your requirement and get back to you with advice and a quotation.
-        </p>
-      </div>
-    );
+    goToThankYou(attribution);
   }
 
   return (

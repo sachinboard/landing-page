@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
-import { CheckCircle2, Loader2, ShieldCheck } from "lucide-react";
+import { useNavigate } from "@tanstack/react-router";
+import { Loader2, ShieldCheck } from "lucide-react";
 
 import { supabase } from "@/integrations/supabase/client";
 import {
@@ -8,8 +9,12 @@ import {
   SIGNAGE_OPTIONS,
   TIMELINE_OPTIONS,
 } from "@/lib/business";
-import { getAttribution, trackEvent } from "@/lib/tracking";
-import { PhoneLink, WhatsAppButton } from "@/components/landing/cta";
+import {
+  getAttribution,
+  markLeadSubmitted,
+  trackEvent,
+  type Attribution,
+} from "@/lib/tracking";
 import { cn } from "@/lib/utils";
 
 type Field =
@@ -52,12 +57,19 @@ const inputClass =
   "mt-1.5 block w-full rounded-md border border-input bg-background px-3 py-3 text-base text-foreground placeholder:text-muted-foreground/70 focus:border-brand-deep focus:outline-none";
 
 export function QuoteForm() {
+  const navigate = useNavigate();
   const [values, setValues] = useState<Values>(EMPTY);
   const [errors, setErrors] = useState<Errors>({});
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
   const startedRef = useRef(false);
   const honeypotRef = useRef<HTMLInputElement>(null);
   const openedAtRef = useRef(Date.now());
+
+  /** Redirects to the thank-you page, carrying the traffic parameters along. */
+  function goToThankYou(attribution: Attribution) {
+    markLeadSubmitted();
+    navigate({ to: "/thank-you", search: { ...attribution, from: "quote_form" } });
+  }
 
   function update(field: Field, value: string) {
     if (!startedRef.current) {
@@ -70,7 +82,7 @@ export function QuoteForm() {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (status === "submitting" || status === "success") return;
+    if (status === "submitting") return;
 
     const nextErrors = validate(values);
     setErrors(nextErrors);
@@ -82,7 +94,7 @@ export function QuoteForm() {
 
     // Spam protection: hidden honeypot field + minimum time-on-form.
     if (honeypotRef.current?.value || Date.now() - openedAtRef.current < 2500) {
-      setStatus("success");
+      goToThankYou(getAttribution());
       return;
     }
 
@@ -110,29 +122,8 @@ export function QuoteForm() {
       return;
     }
 
-    setStatus("success");
     trackEvent("lead_success", { requirement: values.signageRequirement });
-  }
-
-  if (status === "success") {
-    return (
-      <section id="quote" className="bg-background">
-        <div className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6 md:py-24">
-          <CheckCircle2 aria-hidden="true" className="mx-auto size-14 text-brand-deep" />
-          <h2 className="font-display mt-5 text-3xl sm:text-4xl" role="status">
-            Thank you - your request is in
-          </h2>
-          <p className="mt-4 text-base text-muted-foreground">
-            Our team will get in touch on the phone number you shared to understand your signage
-            requirement and prepare a quotation. If it is urgent, message or call us directly.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <WhatsAppButton location="success_screen" variant="dark" className="px-6 py-3.5 text-base" />
-            <PhoneLink location="success_screen" className="px-4 py-3 text-base text-ink" />
-          </div>
-        </div>
-      </section>
-    );
+    goToThankYou(attribution);
   }
 
   return (

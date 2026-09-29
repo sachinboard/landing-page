@@ -74,6 +74,31 @@ const META_EVENTS: Record<string, string> = {
   phone_click: "Contact",
 };
 
+/**
+ * Flags a genuine submission for the current tab, so the thank-you page can
+ * tell a real conversion apart from someone simply opening the URL.
+ */
+export function markLeadSubmitted() {
+  if (typeof window === "undefined") return;
+  try {
+    window.sessionStorage.setItem("lead_submitted", "1");
+  } catch {
+    // sessionStorage unavailable - the thank-you page stays silent.
+  }
+}
+
+/** Reads and clears the submission flag. True only right after a real submit. */
+export function consumeLeadSubmitted() {
+  if (typeof window === "undefined") return false;
+  try {
+    const marked = window.sessionStorage.getItem("lead_submitted") === "1";
+    if (marked) window.sessionStorage.removeItem("lead_submitted");
+    return marked;
+  } catch {
+    return false;
+  }
+}
+
 export function trackEvent(event: string, params: Params = {}) {
   if (typeof window === "undefined") return;
   const payload = { ...getAttribution(), ...params };
