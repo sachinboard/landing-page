@@ -16,34 +16,34 @@ const PROJECTS: Project[] = [
   {
     image: projGym,
     alt: "Gold's Gym interior brick wall with black metal grid, circular Gold's Gym logo and large yellow 3D letters reading Can't Stop Won't Stop above a wooden floor",
-    caption: "                                Gold's Gym ",
+    caption: "Gold's Gym",
   },
   {
     image: projPet,
     alt: "Illuminated orange and blue 3D letters for Gilly's Super Bar mounted on a black slatted storefront board",
-    caption: "                                  Gilly's Super Bar",
+    caption: "Gilly's Super Bar",
   },
   {
     image: projCafe,
     alt: "Backlit sign board at night with glowing white Kannada and English lettering for Grovies, a dine-in sports bistro",
-    caption: "                                     Grovies",
+    caption: "Grovies",
   },
   {
     image: projBar,
     contain: true,
     alt: "Cream 3D channel letters reading D'Naples pizza mounted above a glass shopfront at dusk",
-    caption: "                                D'Naples Pizza ",
+    caption: "D'Naples Pizza",
   },
   {
     image: projMonk,
     contain: true,
     alt: "Warm orange LED neon sign reading The taste of Bihar glowing on a wall at night",
-    caption: "                                 Taste of Bihar",
+    caption: "Taste of Bihar",
   },
   {
     image: projDuck,
     alt: "Green 3D sign board with raised gold letters for Dizzy Duck",
-    caption: "                                    Fit24 Fitness Club",
+    caption: "Fit24 Fitness Club",
   },
 ];
 

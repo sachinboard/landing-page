@@ -20,7 +20,7 @@ const STEPS = [
 export function Process() {
   return (
     <section className="bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-7 sm:px-6 md:py-20">
         <p className="text-xs font-bold tracking-[0.18em] text-brand-deep uppercase">
           How it works
         </p>
@@ -28,7 +28,7 @@ export function Process() {
           From enquiry to installed board
         </h2>
 
-        <ol className="mt-6 grid gap-6 sm:mt-10 sm:grid-cols-2 md:gap-8 lg:grid-cols-4">
+        <ol className="mt-5 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:gap-8 lg:grid-cols-4">
           {STEPS.map((step, index) => (
             <li key={step.title} className="min-w-0 border-t-4 border-brand pt-4">
               <p className="font-display text-2xl text-brand-deep">0{index + 1}</p>

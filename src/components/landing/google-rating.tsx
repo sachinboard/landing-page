@@ -32,7 +32,7 @@ export function GoogleRating() {
     "inline-flex flex-wrap items-center gap-2 rounded-md border border-ink-foreground/15 bg-ink-foreground/5 px-3 py-2";
 
   return (
-    <div className="mt-5">
+    <div className="mt-4 sm:mt-5">
       {profileUrl ? (
         <a href={profileUrl} target="_blank" rel="noopener noreferrer" className={className}>
           {content}

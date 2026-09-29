@@ -7,7 +7,7 @@ import { HeroQuoteForm } from "@/components/landing/hero-quote-form";
 export function Hero() {
   return (
     <section id="top" className="bg-ink text-ink-foreground">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-8 sm:px-6 md:grid-cols-2 md:items-stretch md:gap-12 md:py-16">
+      <div className="mx-auto grid max-w-6xl gap-6 px-4 py-7 sm:px-6 md:grid-cols-2 md:items-stretch md:gap-12 md:py-16">
         <div className="flex min-w-0 flex-col md:justify-between">
           <p className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold tracking-[0.18em] text-brand uppercase">
             <span className="inline-flex items-center gap-1.5">
@@ -15,14 +15,14 @@ export function Hero() {
             </span>
           </p>
 
-          <h1 className="font-display mt-5 max-w-xl text-3xl leading-[1.14] sm:text-[2.75rem] lg:text-5xl">
+          <h1 className="font-display mt-4 max-w-xl text-3xl leading-[1.14] sm:mt-5 sm:text-[2.75rem] lg:text-5xl">
             <span className="block">Custom sign boards that make your storefront</span>
             <span className="mt-3 block leading-[1.2]">
               <span className="highlight-mark text-brand-foreground">impossible to miss</span>
             </span>
           </h1>
 
-          <ul className="mt-5 max-w-lg space-y-2.5 text-base leading-relaxed text-ink-muted sm:text-lg">
+          <ul className="mt-4 max-w-lg space-y-2 text-[0.9375rem] leading-relaxed text-ink-muted sm:mt-5 sm:space-y-2.5 sm:text-lg">
             {[
               "Design, manufacturing and installation ",
               "2,000+ Signage projects completed",

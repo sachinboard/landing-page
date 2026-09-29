@@ -123,13 +123,13 @@ export function HeroQuoteForm() {
   }
 
   return (
-    <div className="rounded-xl bg-background p-5 shadow-2xl sm:p-6">
+    <div className="rounded-xl bg-background p-4 shadow-2xl sm:p-6">
       <h2 className="font-display text-xl text-ink sm:text-2xl">Get a Quote</h2>
       <p className="mt-1.5 text-sm text-muted-foreground">
         Share a few details and we will come back with pricing and design advice.
       </p>
 
-      <form onSubmit={handleSubmit} noValidate className="mt-5 grid gap-4 sm:grid-cols-2">
+      <form onSubmit={handleSubmit} noValidate className="mt-4 grid gap-3 sm:mt-5 sm:grid-cols-2 sm:gap-4">
         <div className="min-w-0 sm:col-span-2">
           <label htmlFor="hero-fullName" className={labelClass}>
             Name <span className="text-destructive">*</span>
@@ -258,7 +258,7 @@ export function HeroQuoteForm() {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="heroTerms" className="flex items-start gap-2.5 text-sm text-ink">
+          <label htmlFor="heroTerms" className="flex items-start gap-2.5 text-[0.8125rem] leading-snug text-ink sm:text-sm">
             <input
               id="heroTerms"
               name="terms"
@@ -270,7 +270,7 @@ export function HeroQuoteForm() {
               }}
               aria-invalid={errors.terms ? true : undefined}
               aria-describedby={errors.terms ? "hero-terms-error" : undefined}
-              className="mt-0.5 size-4 shrink-0 accent-brand-deep"
+              className="mt-0.5 size-5 shrink-0 accent-brand-deep sm:size-4"
             />
             <span>
               I agree to the terms and conditions and consent to being contacted about this signage

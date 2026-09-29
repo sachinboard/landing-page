@@ -54,7 +54,7 @@ function validate(values: Values): Errors {
 }
 
 const inputClass =
-  "mt-1.5 block w-full rounded-md border border-input bg-background px-3 py-3 text-base text-foreground placeholder:text-muted-foreground/70 focus:border-brand-deep focus:outline-none";
+  "mt-1 block w-full rounded-md border border-input bg-background px-3 py-2.5 text-base text-foreground placeholder:text-muted-foreground/70 focus:border-brand-deep focus:outline-none sm:mt-1.5 sm:py-3";
 
 export function QuoteForm() {
   const navigate = useNavigate();
@@ -128,20 +128,20 @@ export function QuoteForm() {
 
   return (
     <section id="quote" className="bg-background">
-      <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-20">
-        <h2 className="font-display text-3xl sm:text-4xl">
+      <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 md:py-20">
+        <h2 className="font-display text-2xl sm:text-4xl">
           Get a Custom Quote for Your Business Signage
         </h2>
-        <p className="mt-4 text-base text-muted-foreground">
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:mt-4 sm:text-base">
           Tell us what you need and our professional team will call you for tele-consultation and a free quotation.
           Takes under a minute.
         </p>
-        <p className="mt-4 flex items-center gap-2 text-sm font-semibold text-brand-deep">
+        <p className="mt-3 flex items-start gap-2 text-xs font-semibold leading-relaxed text-brand-deep sm:mt-4 sm:items-center sm:text-sm">
           <ShieldCheck aria-hidden="true" className="size-4 shrink-0" />
           ISO 9001:2005 certified · 5-year warranty · 2,000+ projects delivered
         </p>
 
-        <form onSubmit={handleSubmit} noValidate className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5">
+        <form onSubmit={handleSubmit} noValidate className="mt-5 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-5">
           <TextField
             id="fullName"
             label="Full name"

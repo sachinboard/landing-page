@@ -11,7 +11,7 @@ export function Footer() {
 
   return (
     <footer className="bg-ink text-ink-foreground">
-      <div className="mx-auto grid max-w-6xl gap-5 px-4 py-8 sm:px-6 md:grid-cols-3 md:gap-8 md:py-10">
+      <div className="mx-auto grid max-w-6xl gap-4 px-4 py-7 sm:px-6 md:grid-cols-3 md:gap-8 md:py-10">
         <div className="min-w-0">
           <img
             src={logo}
@@ -21,7 +21,7 @@ export function Footer() {
             loading="lazy"
             className="h-12 w-auto rounded bg-background px-3 py-1.5"
           />
-          <p className="mt-4 text-sm text-ink-muted">
+          <p className="mt-3 text-sm text-ink-muted sm:mt-4">
             Sign board manufacturing, design and installation in {BUSINESS.city}. ISO 9001:2005
             certified.
           </p>
@@ -80,7 +80,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-ink-foreground/10">
-        <p className="mx-auto max-w-6xl px-4 py-5 text-xs text-ink-muted sm:px-6">
+        <p className="mx-auto max-w-6xl px-4 py-4 text-xs text-ink-muted sm:px-6 sm:py-5">
           © {new Date().getFullYear()} {BUSINESS.name}. All rights reserved.
         </p>
       </div>
