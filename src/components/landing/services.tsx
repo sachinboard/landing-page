@@ -71,7 +71,7 @@ export function Services() {
           Choose your signage
         </h2>
         <p className="mt-4 max-w-2xl text-base text-muted-foreground">
-          Every board is made as per the brand guidelines, accurate measurements and accounting for proper light around the signage. It's a curated service for your brand, not a generic catalog and trusted by 100+ brands in Bangalore.
+          Custom-made to your brand, measurements and lighting needs. Trusted by 100+ brands in Bangalore.
         </p>
 
         <Carousel opts={{ align: "start", loop: true }} className="mt-6 px-1 md:mt-10 md:px-12">
