@@ -15,3 +15,8 @@
   and an IntersectionObserver that plays only while the slider is on screen. Why: motion stays
   opt-out friendly and no timers run off-screen. Note: embla v8 has no `autoplay` option —
   `playOnInit`/`active` are the real option names, a wrong key is silently ignored.
+- Every quote form ends on `/thank-you`: submit → `lead_success` → `navigate()` with the campaign
+  parameters (`utm_*`, `gclid`, `fbclid`) and `from` copied into the URL, never an in-page success
+  screen. That page is `noindex, nofollow`, carries no sticky quote bar, and only reports
+  `thank_you_view` when a `sessionStorage` flag set at submit proves a real submission happened.
+  Why: ad platforms record conversions on a dedicated URL, and a bare visit must not count as a lead.
