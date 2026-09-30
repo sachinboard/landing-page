@@ -1,12 +1,17 @@
-import projGymAsset from "@/assets/golds-gym-wall.webp.asset.json";
+import projGymAssetSrc from "@/assets/golds-gym-wall.webp";
+const projGymAsset = { url: projGymAssetSrc };
 const projGym = projGymAsset.url;
-import projGroviesAsset from "@/assets/portfolio/grovies-cafe.webp.asset.json";
+import projGroviesAssetSrc from "@/assets/portfolio/grovies-cafe.webp";
+const projGroviesAsset = { url: projGroviesAssetSrc };
 const projCafe = projGroviesAsset.url;
-import projGillysAsset from "@/assets/portfolio/gillys-bar.webp.asset.json";
+import projGillysAssetSrc from "@/assets/portfolio/gillys-bar.webp";
+const projGillysAsset = { url: projGillysAssetSrc };
 const projPet = projGillysAsset.url;
-import projNaplesAsset from "@/assets/portfolio/dnaples-pizza.webp.asset.json";
+import projNaplesAssetSrc from "@/assets/portfolio/dnaples-pizza.webp";
+const projNaplesAsset = { url: projNaplesAssetSrc };
 const projBar = projNaplesAsset.url;
-import projBiharAsset from "@/assets/portfolio/taste-of-bihar.webp.asset.json";
+import projBiharAssetSrc from "@/assets/portfolio/taste-of-bihar.webp";
+const projBiharAsset = { url: projBiharAssetSrc };
 const projMonk = projBiharAsset.url;
 import projDuck from "@/assets/ls-svc-3d.webp";
 
