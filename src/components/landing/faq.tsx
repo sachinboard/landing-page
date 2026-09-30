@@ -24,7 +24,7 @@ export const FAQS = [
     a: "Pricing depends on the board type, size, materials and lighting, so we quote after understanding your requirement. Share your details and we will send a written quotation.",
   },
   {
-    q: "Which areas do you serve?",
+    q: "Which areas do you serve? ",
     a: `We are based in ${BUSINESS.city} and serve businesses across ${BUSINESS.serviceArea}.`,
   },
   {
