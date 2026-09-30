@@ -6,9 +6,9 @@
 export const BUSINESS = {
   name: "The Board Company",
   city: "Bengaluru",
-  phoneDisplay: "+91 99866 40129",
-  phoneDial: "+919986640129",
-  whatsapp: "919986640129",
+  phoneDisplay: "+91 97310 33433",
+  phoneDial: "+919731033433",
+  whatsapp: "919731033433",
   whatsappMessage:
     "Hi The Board Company, I'd like a quote for business signage. My requirement is:",
   address: {
