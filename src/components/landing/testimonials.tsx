@@ -2,10 +2,14 @@ import { useEffect, useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Star } from "lucide-react";
 
-import r23 from "@/assets/reviews/r23.webp.asset.json";
-import r25 from "@/assets/reviews/r25.webp.asset.json";
-import r33 from "@/assets/reviews/r33.webp.asset.json";
-import presha from "@/assets/reviews/presha.webp.asset.json";
+import r23Src from "@/assets/reviews/r23.webp";
+const r23 = { url: r23Src };
+import r25Src from "@/assets/reviews/r25.webp";
+const r25 = { url: r25Src };
+import r33Src from "@/assets/reviews/r33.webp";
+const r33 = { url: r33Src };
+import preshaSrc from "@/assets/reviews/presha.webp";
+const presha = { url: preshaSrc };
 import {
   Carousel,
   CarouselContent,
