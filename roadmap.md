@@ -2,11 +2,11 @@
 
 ## SEO: indexable pages for each section (requested 2026-10-01)
 
-- [ ] Create /sign-boards, /recent-work, /google-reviews, /faq as their own indexable pages
-- [ ] Self-referencing canonical + unique title/description on every page, incl. home
-- [ ] XML sitemap + robots.txt Sitemap directive
-- [ ] Footer links to the new pages; quote CTAs resolve off the home page
-- [ ] Verify: build clean, pages render, no overflow on mobile
+- [x] Create /sign-boards, /recent-work, /google-reviews, /faq as their own indexable pages
+- [x] Self-referencing canonical + unique title/description on every page, incl. home
+- [x] XML sitemap + robots.txt Sitemap directive
+- [x] Footer links to the new pages; quote CTAs resolve off the home page
+- [x] Verify: build clean, pages render, no overflow on mobile
 
 ## Waiting on the user
 
