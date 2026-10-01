@@ -20,7 +20,11 @@ const fieldClass =
   "mt-1.5 block w-full rounded-md border border-input bg-background px-3 py-2.5 text-base text-foreground placeholder:text-muted-foreground/70 focus:border-brand-deep focus:outline-none";
 const labelClass = "block text-sm font-bold text-ink";
 
-export function HeroQuoteForm() {
+export function HeroQuoteForm({
+  idPrefix: p = "hero",
+  location = "hero_form",
+  showHeading = true,
+}: { idPrefix?: string; location?: "hero_form" | "quote_form"; showHeading?: boolean } = {}) {
   const navigate = useNavigate();
   const [values, setValues] = useState<Values>(EMPTY);
   const [accepted, setAccepted] = useState(true);
@@ -32,13 +36,13 @@ export function HeroQuoteForm() {
   /** Redirects to the thank-you page, carrying the traffic parameters along. */
   function goToThankYou(attribution: Attribution) {
     markLeadSubmitted();
-    navigate({ to: "/thank-you", search: { ...attribution, from: "hero_form" } });
+    navigate({ to: "/thank-you", search: { ...attribution, from: location } });
   }
 
   function update(field: Field, value: string) {
     if (!startedRef.current) {
       startedRef.current = true;
-      trackEvent("quote_form_started", { location: "hero_form" });
+      trackEvent("quote_form_started", { location: location });
     }
     setValues((previous) => ({ ...previous, [field]: value }));
     setErrors((previous) => ({ ...previous, [field]: undefined }));
@@ -61,7 +65,7 @@ export function HeroQuoteForm() {
     setErrors(next);
     if (Object.keys(next).length > 0) {
       const firstField = Object.keys(next)[0]!;
-      document.getElementById(firstField === "terms" ? "heroTerms" : `hero-${firstField}`)?.focus();
+      document.getElementById(firstField === "terms" ? `${p}Terms` : `${p}-${firstField}`)?.focus();
       return;
     }
 
@@ -72,7 +76,7 @@ export function HeroQuoteForm() {
 
     setStatus("submitting");
     trackEvent("quote_form_submitted", {
-      location: "hero_form",
+      location: location,
       requirement: values.signageType,
     });
 
@@ -118,41 +122,46 @@ export function HeroQuoteForm() {
       ...attribution,
     });
 
-    trackEvent("lead_success", { location: "hero_form", requirement: values.signageType });
+    trackEvent("lead_success", { location: location, requirement: values.signageType });
     goToThankYou(attribution);
   }
 
   return (
     <div className="rounded-xl bg-background p-4 shadow-2xl sm:p-6">
-      <h2 className="font-display text-xl text-ink sm:text-2xl">Get a Quote</h2>
-      <p className="mt-1.5 text-sm text-muted-foreground">
-        Share a few details and we will come back with pricing and design advice.
-      </p>
+      {showHeading && (
+        <>
+          <h2 className="font-display text-xl text-ink sm:text-2xl">Get a Quote</h2>
+          <p className="mt-1.5 text-sm text-muted-foreground">
+            Share a few details and we will come back with pricing and design advice.
+          </p>
+        </>
+      )}
 
-      <form onSubmit={handleSubmit} noValidate className="mt-4 grid gap-3 sm:mt-5 sm:grid-cols-2 sm:gap-4">
+      <form onSubmit={handleSubmit} noValidate className={cn("grid gap-3 sm:grid-cols-2 sm:gap-4", showHeading && "mt-4 sm:mt-5")}
+        >
         <div className="min-w-0 sm:col-span-2">
-          <label htmlFor="hero-fullName" className={labelClass}>
+          <label htmlFor={`${p}-fullName`} className={labelClass}>
             Name <span className="text-destructive">*</span>
           </label>
           <input
-            id="hero-fullName"
+            id={`${p}-fullName`}
             name="fullName"
             autoComplete="name"
             value={values.fullName}
             onChange={(event) => update("fullName", event.target.value)}
             aria-invalid={errors.fullName ? true : undefined}
-            aria-describedby={errors.fullName ? "hero-fullName-error" : undefined}
+            aria-describedby={errors.fullName ? `${p}-fullName-error` : undefined}
             className={cn(fieldClass, errors.fullName && "border-destructive")}
           />
-          <FieldError id="hero-fullName-error" message={errors.fullName} />
+          <FieldError id={`${p}-fullName-error`} message={errors.fullName} />
         </div>
 
         <div className="min-w-0 sm:col-span-2">
-          <label htmlFor="hero-phone" className={labelClass}>
+          <label htmlFor={`${p}-phone`} className={labelClass}>
             Phone number <span className="text-destructive">*</span>
           </label>
           <input
-            id="hero-phone"
+            id={`${p}-phone`}
             name="phone"
             type="tel"
             inputMode="tel"
@@ -161,18 +170,18 @@ export function HeroQuoteForm() {
             value={values.phone}
             onChange={(event) => update("phone", event.target.value)}
             aria-invalid={errors.phone ? true : undefined}
-            aria-describedby={errors.phone ? "hero-phone-error" : undefined}
+            aria-describedby={errors.phone ? `${p}-phone-error` : undefined}
             className={cn(fieldClass, errors.phone && "border-destructive")}
           />
-          <FieldError id="hero-phone-error" message={errors.phone} />
+          <FieldError id={`${p}-phone-error`} message={errors.phone} />
         </div>
 
         <div className="min-w-0 sm:col-span-2">
-          <label htmlFor="hero-email" className={labelClass}>
+          <label htmlFor={`${p}-email`} className={labelClass}>
             Email <span className="text-destructive">*</span>
           </label>
           <input
-            id="hero-email"
+            id={`${p}-email`}
             name="email"
             type="email"
             inputMode="email"
@@ -180,35 +189,35 @@ export function HeroQuoteForm() {
             value={values.email}
             onChange={(event) => update("email", event.target.value)}
             aria-invalid={errors.email ? true : undefined}
-            aria-describedby={errors.email ? "hero-email-error" : undefined}
+            aria-describedby={errors.email ? `${p}-email-error` : undefined}
             className={cn(fieldClass, errors.email && "border-destructive")}
           />
-          <FieldError id="hero-email-error" message={errors.email} />
+          <FieldError id={`${p}-email-error`} message={errors.email} />
         </div>
 
         <div className="min-w-0">
-          <label htmlFor="hero-brand" className={labelClass}>
+          <label htmlFor={`${p}-brand`} className={labelClass}>
             Brand <span className="text-destructive">*</span>
           </label>
           <input
-            id="hero-brand"
+            id={`${p}-brand`}
             name="brand"
             autoComplete="organization"
             value={values.brand}
             onChange={(event) => update("brand", event.target.value)}
             aria-invalid={errors.brand ? true : undefined}
-            aria-describedby={errors.brand ? "hero-brand-error" : undefined}
+            aria-describedby={errors.brand ? `${p}-brand-error` : undefined}
             className={cn(fieldClass, errors.brand && "border-destructive")}
           />
-          <FieldError id="hero-brand-error" message={errors.brand} />
+          <FieldError id={`${p}-brand-error`} message={errors.brand} />
         </div>
 
         <div className="min-w-0">
-          <label htmlFor="hero-size" className={labelClass}>
+          <label htmlFor={`${p}-size`} className={labelClass}>
             Size (ft) <span className="font-normal text-muted-foreground">(optional)</span>
           </label>
           <input
-            id="hero-size"
+            id={`${p}-size`}
             name="size"
             inputMode="text"
             placeholder="e.g. 8 x 3"
@@ -219,16 +228,16 @@ export function HeroQuoteForm() {
         </div>
 
         <div className="min-w-0 sm:col-span-2">
-          <label htmlFor="hero-signageType" className={labelClass}>
+          <label htmlFor={`${p}-signageType`} className={labelClass}>
             Type <span className="text-destructive">*</span>
           </label>
           <select
-            id="hero-signageType"
+            id={`${p}-signageType`}
             name="signageType"
             value={values.signageType}
             onChange={(event) => update("signageType", event.target.value)}
             aria-invalid={errors.signageType ? true : undefined}
-            aria-describedby={errors.signageType ? "hero-signageType-error" : undefined}
+            aria-describedby={errors.signageType ? `${p}-signageType-error` : undefined}
             className={cn(
               fieldClass,
               !values.signageType && "text-muted-foreground",
@@ -242,15 +251,15 @@ export function HeroQuoteForm() {
               </option>
             ))}
           </select>
-          <FieldError id="hero-signageType-error" message={errors.signageType} />
+          <FieldError id={`${p}-signageType-error`} message={errors.signageType} />
         </div>
 
         {/* Honeypot - hidden from users, filled only by bots. */}
         <div aria-hidden="true" className="hidden">
-          <label htmlFor="hero_company_website">Company website</label>
+          <label htmlFor={`${p}_company_website`}>Company website</label>
           <input
             ref={honeypotRef}
-            id="hero_company_website"
+            id={`${p}_company_website`}
             name="hero_company_website"
             tabIndex={-1}
             autoComplete="off"
@@ -258,9 +267,9 @@ export function HeroQuoteForm() {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="heroTerms" className="flex items-start gap-2.5 text-[0.8125rem] leading-snug text-ink sm:text-sm">
+          <label htmlFor={`${p}Terms`} className="flex items-start gap-2.5 text-[0.8125rem] leading-snug text-ink sm:text-sm">
             <input
-              id="heroTerms"
+              id={`${p}Terms`}
               name="terms"
               type="checkbox"
               checked={accepted}
@@ -269,7 +278,7 @@ export function HeroQuoteForm() {
                 setErrors((previous) => ({ ...previous, terms: undefined }));
               }}
               aria-invalid={errors.terms ? true : undefined}
-              aria-describedby={errors.terms ? "hero-terms-error" : undefined}
+              aria-describedby={errors.terms ? `${p}-terms-error` : undefined}
               className="mt-0.5 size-5 shrink-0 accent-brand-deep sm:size-4"
             />
             <span>
@@ -277,7 +286,7 @@ export function HeroQuoteForm() {
               enquiry. <span className="text-destructive">*</span>
             </span>
           </label>
-          <FieldError id="hero-terms-error" message={errors.terms} />
+          <FieldError id={`${p}-terms-error`} message={errors.terms} />
         </div>
 
         <div className="sm:col-span-2">
