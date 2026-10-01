@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/carousel";
 
 /** Google reviews supplied by the business (screenshots of their Google listing). */
-const REVIEWS: { name: string; when: string; photo?: string; text: string }[] = [
+export const REVIEWS: { name: string; when: string; photo?: string; text: string }[] = [
   { name: "Aniketh Gowda", when: "22 hours ago", text: "This signboard manufactures in Bangalore are top Notch! I got signage for my Cafe in just 3 days. Starting from design and till the installation they were too much supportive and also they gave a 5 year warranty card." },
   { name: "Mahan Gowda", when: "21 hours ago", text: "Affordle, Quality, On Time, Perfect Finish and also most thing is trustable. Do not miss this place" },
   { name: "Presha Roy", when: "a week ago", photo: presha.url, text: "Had a great experience with this company! The service was excellent, and the neon-lit restaurant board I got from them looks absolutely beautiful. The quality and finish are impressive, and it has really enhanced the look of our restaurant. Highly recommend them to anyone looking for quality signage and neon light services!" },

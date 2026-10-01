@@ -17,7 +17,7 @@ import projDuck from "@/assets/ls-svc-3d.webp";
 
 type Project = { image: string; alt: string; caption: string; contain?: boolean };
 
-const PROJECTS: Project[] = [
+export const PROJECTS: Project[] = [
   {
     image: projGym,
     alt: "Gold's Gym interior brick wall with black metal grid, circular Gold's Gym logo and large yellow 3D letters reading Can't Stop Won't Stop above a wooden floor",
