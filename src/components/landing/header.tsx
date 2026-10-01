@@ -1,14 +1,15 @@
 import logo from "@/assets/logo-wordmark.webp";
 import { WhatsAppIcon } from "@/components/landing/whatsapp-icon";
-import { PhoneLink } from "@/components/landing/cta";
+import { PhoneLink, useTopHref } from "@/components/landing/cta";
 import { whatsappHref } from "@/lib/business";
 import { trackEvent } from "@/lib/tracking";
 
 export function Header() {
+  const topHref = useTopHref();
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-6">
-        <a href="#top" className="flex min-w-0 items-center" aria-label="The Board Company - home">
+        <a href={topHref} className="flex min-w-0 items-center" aria-label="The Board Company - home">
           <img
             src={logo}
             alt="The Board Company logo"

@@ -1,4 +1,4 @@
-const STEPS = [
+export const STEPS = [
   {
     title: "Share your requirement",
     body: "Send us your artwork, site details and board placement.",

@@ -13,7 +13,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-const SERVICES = [
+export const SERVICES = [
   {
     title: "3D Sign Boards",
     image: svc3d,

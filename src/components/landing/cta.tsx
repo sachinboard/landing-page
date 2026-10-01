@@ -1,10 +1,28 @@
 import { Phone } from "lucide-react";
 import type { ReactNode } from "react";
+import { useLocation } from "@tanstack/react-router";
 
 import { WhatsAppIcon } from "@/components/landing/whatsapp-icon";
 import { BUSINESS, whatsappHref } from "@/lib/business";
 import { cn } from "@/lib/utils";
 import { trackEvent } from "@/lib/tracking";
+
+/**
+ * The quote form is an anchor on the home page, so from any other page the
+ * same call to action has to go to the home page first.
+ */
+export function useQuoteHref() {
+  const { pathname } = useLocation();
+  return pathname === "/" ? "#quote" : "/#quote";
+}
+
+/** Same for the banner at the top of the home page (logo / back-to-top links). */
+export function useTopHref() {
+  const { pathname } = useLocation();
+  return pathname === "/" ? "#top" : "/#top";
+}
+
+
 
 const base =
   "inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-bold tracking-wide transition-colors disabled:pointer-events-none disabled:opacity-60";
@@ -18,9 +36,11 @@ export function QuoteButton({
   className?: string;
   children?: ReactNode;
 }) {
+  const quoteHref = useQuoteHref();
   return (
     <a
-      href="#quote"
+      href={quoteHref}
+
       onClick={() => trackEvent("cta_click", { cta: "get_a_free_quote", location })}
       className={cn(base, "bg-brand text-brand-foreground hover:bg-brand/85", className)}
     >

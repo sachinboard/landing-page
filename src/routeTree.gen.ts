@@ -10,7 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as GoogleReviewsRouteImport } from './routes/google-reviews'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as RecentWorkRouteImport } from './routes/recent-work'
+import { Route as SignBoardsRouteImport } from './routes/sign-boards'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
 
 const IndexRoute = IndexRouteImport.update({
@@ -18,9 +23,34 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GoogleReviewsRoute = GoogleReviewsRouteImport.update({
+  id: '/google-reviews',
+  path: '/google-reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecentWorkRoute = RecentWorkRouteImport.update({
+  id: '/recent-work',
+  path: '/recent-work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignBoardsRoute = SignBoardsRouteImport.update({
+  id: '/sign-boards',
+  path: '/sign-boards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ThankYouRoute = ThankYouRouteImport.update({
@@ -31,31 +61,76 @@ const ThankYouRoute = ThankYouRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/faq': typeof FaqRoute
+  '/google-reviews': typeof GoogleReviewsRoute
   '/privacy': typeof PrivacyRoute
+  '/recent-work': typeof RecentWorkRoute
+  '/sign-boards': typeof SignBoardsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/thank-you': typeof ThankYouRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/faq': typeof FaqRoute
+  '/google-reviews': typeof GoogleReviewsRoute
   '/privacy': typeof PrivacyRoute
+  '/recent-work': typeof RecentWorkRoute
+  '/sign-boards': typeof SignBoardsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/thank-you': typeof ThankYouRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/faq': typeof FaqRoute
+  '/google-reviews': typeof GoogleReviewsRoute
   '/privacy': typeof PrivacyRoute
+  '/recent-work': typeof RecentWorkRoute
+  '/sign-boards': typeof SignBoardsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/thank-you': typeof ThankYouRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacy' | '/thank-you'
+  fullPaths:
+    | '/'
+    | '/faq'
+    | '/google-reviews'
+    | '/privacy'
+    | '/recent-work'
+    | '/sign-boards'
+    | '/sitemap.xml'
+    | '/thank-you'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy' | '/thank-you'
-  id: '__root__' | '/' | '/privacy' | '/thank-you'
+  to:
+    | '/'
+    | '/faq'
+    | '/google-reviews'
+    | '/privacy'
+    | '/recent-work'
+    | '/sign-boards'
+    | '/sitemap.xml'
+    | '/thank-you'
+  id:
+    | '__root__'
+    | '/'
+    | '/faq'
+    | '/google-reviews'
+    | '/privacy'
+    | '/recent-work'
+    | '/sign-boards'
+    | '/sitemap.xml'
+    | '/thank-you'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FaqRoute: typeof FaqRoute
+  GoogleReviewsRoute: typeof GoogleReviewsRoute
   PrivacyRoute: typeof PrivacyRoute
+  RecentWorkRoute: typeof RecentWorkRoute
+  SignBoardsRoute: typeof SignBoardsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ThankYouRoute: typeof ThankYouRoute
 }
 
@@ -68,11 +143,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/google-reviews': {
+      id: '/google-reviews'
+      path: '/google-reviews'
+      fullPath: '/google-reviews'
+      preLoaderRoute: typeof GoogleReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recent-work': {
+      id: '/recent-work'
+      path: '/recent-work'
+      fullPath: '/recent-work'
+      preLoaderRoute: typeof RecentWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sign-boards': {
+      id: '/sign-boards'
+      path: '/sign-boards'
+      fullPath: '/sign-boards'
+      preLoaderRoute: typeof SignBoardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/thank-you': {
@@ -87,7 +197,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FaqRoute: FaqRoute,
+  GoogleReviewsRoute: GoogleReviewsRoute,
   PrivacyRoute: PrivacyRoute,
+  RecentWorkRoute: RecentWorkRoute,
+  SignBoardsRoute: SignBoardsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ThankYouRoute: ThankYouRoute,
 }
 export const routeTree = rootRouteImport
