@@ -3,6 +3,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/landing/header";
 import { Footer } from "@/components/landing/footer";
 import { BUSINESS } from "@/lib/business";
+import { SITE_URL } from "@/lib/site";
+
 
 const TITLE = "Privacy Policy | The Board Company";
 const DESCRIPTION =
@@ -18,7 +20,7 @@ export const Route = createFileRoute("/privacy")({
       { property: "og:type", content: "website" },
       { name: "robots", content: "noindex, nofollow" },
     ],
-    links: [{ rel: "canonical", href: `${BUSINESS.website}/privacy` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/privacy` }],
   }),
   component: PrivacyPage,
 });
