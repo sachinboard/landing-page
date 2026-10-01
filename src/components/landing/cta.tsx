@@ -1,10 +1,21 @@
 import { Phone } from "lucide-react";
 import type { ReactNode } from "react";
+import { useLocation } from "@tanstack/react-router";
 
 import { WhatsAppIcon } from "@/components/landing/whatsapp-icon";
 import { BUSINESS, whatsappHref } from "@/lib/business";
 import { cn } from "@/lib/utils";
 import { trackEvent } from "@/lib/tracking";
+
+/**
+ * The quote form is an anchor on the home page, so from any other page the
+ * same call to action has to go to the home page first.
+ */
+export function useQuoteHref() {
+  const { pathname } = useLocation();
+  return pathname === "/" ? "#quote" : "/#quote";
+}
+
 
 const base =
   "inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-bold tracking-wide transition-colors disabled:pointer-events-none disabled:opacity-60";

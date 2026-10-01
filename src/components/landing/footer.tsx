@@ -1,13 +1,11 @@
 import logo from "@/assets/logo-wordmark.webp";
-import { Link, useLocation } from "@tanstack/react-router";
-import { PhoneLink } from "@/components/landing/cta";
+import { Link } from "@tanstack/react-router";
+import { PhoneLink, useQuoteHref } from "@/components/landing/cta";
 import { BUSINESS } from "@/lib/business";
 
 export function Footer() {
-  // On the landing page the quote form is an anchor on this page; from any
-  // other page the same link has to go to the home page first.
-  const { pathname } = useLocation();
-  const quoteHref = pathname === "/" ? "#quote" : "/#quote";
+  const quoteHref = useQuoteHref();
+
 
   return (
     <footer className="bg-ink text-ink-foreground">

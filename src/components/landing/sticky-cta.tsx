@@ -1,8 +1,10 @@
 import { Phone } from "lucide-react";
 
 import { WhatsAppIcon } from "@/components/landing/whatsapp-icon";
+import { useQuoteHref } from "@/components/landing/cta";
 import { BUSINESS, whatsappHref } from "@/lib/business";
 import { trackEvent } from "@/lib/tracking";
+
 
 const iconButton =
   "inline-flex size-12 shrink-0 items-center justify-center rounded-md border border-input text-ink";
