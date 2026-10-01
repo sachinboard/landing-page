@@ -16,6 +16,13 @@ export function useQuoteHref() {
   return pathname === "/" ? "#quote" : "/#quote";
 }
 
+/** Same for the banner at the top of the home page (logo / back-to-top links). */
+export function useTopHref() {
+  const { pathname } = useLocation();
+  return pathname === "/" ? "#top" : "/#top";
+}
+
+
 
 const base =
   "inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-bold tracking-wide transition-colors disabled:pointer-events-none disabled:opacity-60";
