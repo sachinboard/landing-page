@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/site";
 // Indexable pages only. /thank-you and /privacy carry noindex and stay out here.
 const PAGES = ["/", "/sign-boards", "/recent-work", "/google-reviews", "/faq"];
 
-export const Route = createFileRoute("/sitemap[.]xml")({
+export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: () => {

@@ -15,6 +15,7 @@ import { Route as GoogleReviewsRouteImport } from './routes/google-reviews'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as RecentWorkRouteImport } from './routes/recent-work'
 import { Route as SignBoardsRouteImport } from './routes/sign-boards'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
 
 const IndexRoute = IndexRouteImport.update({
@@ -47,6 +48,11 @@ const SignBoardsRoute = SignBoardsRouteImport.update({
   path: '/sign-boards',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ThankYouRoute = ThankYouRouteImport.update({
   id: '/thank-you',
   path: '/thank-you',
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/recent-work': typeof RecentWorkRoute
   '/sign-boards': typeof SignBoardsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/thank-you': typeof ThankYouRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/recent-work': typeof RecentWorkRoute
   '/sign-boards': typeof SignBoardsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/thank-you': typeof ThankYouRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/recent-work': typeof RecentWorkRoute
   '/sign-boards': typeof SignBoardsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/thank-you': typeof ThankYouRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/recent-work'
     | '/sign-boards'
+    | '/sitemap.xml'
     | '/thank-you'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/recent-work'
     | '/sign-boards'
+    | '/sitemap.xml'
     | '/thank-you'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/recent-work'
     | '/sign-boards'
+    | '/sitemap.xml'
     | '/thank-you'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   RecentWorkRoute: typeof RecentWorkRoute
   SignBoardsRoute: typeof SignBoardsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ThankYouRoute: typeof ThankYouRoute
 }
 
@@ -165,6 +178,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignBoardsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/thank-you': {
       id: '/thank-you'
       path: '/thank-you'
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   RecentWorkRoute: RecentWorkRoute,
   SignBoardsRoute: SignBoardsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ThankYouRoute: ThankYouRoute,
 }
 export const routeTree = rootRouteImport

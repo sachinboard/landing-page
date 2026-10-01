@@ -45,6 +45,26 @@ export function Footer() {
               </a>
             </li>
             <li>
+              <Link to="/sign-boards" className="hover:text-ink-foreground">
+                Sign boards
+              </Link>
+            </li>
+            <li>
+              <Link to="/recent-work" className="hover:text-ink-foreground">
+                Recent work
+              </Link>
+            </li>
+            <li>
+              <Link to="/google-reviews" className="hover:text-ink-foreground">
+                Google reviews
+              </Link>
+            </li>
+            <li>
+              <Link to="/faq" className="hover:text-ink-foreground">
+                FAQ
+              </Link>
+            </li>
+            <li>
               <a
                 href={BUSINESS.instagram}
                 target="_blank"
