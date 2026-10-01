@@ -1,4 +1,15 @@
-# Task roadmap
+# Roadmap
 
-- [x] Replace "The Taste of Bihar" photo in Recent Work (uploaded image-50) — 4:3, fits the card, no cropping
-- [x] Replace "D'Naples Pizza" photo in Recent Work (uploaded image-51) — 4:3, fits the card, no cropping
+## SEO: indexable pages for each section (requested 2026-10-01)
+
+- [ ] Create /sign-boards, /recent-work, /google-reviews, /faq as their own indexable pages
+- [ ] Self-referencing canonical + unique title/description on every page, incl. home
+- [ ] XML sitemap + robots.txt Sitemap directive
+- [ ] Footer links to the new pages; quote CTAs resolve off the home page
+- [ ] Verify: build clean, pages render, no overflow on mobile
+
+## Waiting on the user
+
+- [ ] Publish so signage.theboardcompany.in serves the new pages (also fixes images)
+- [ ] Confirm the main site theboardcompany.in does not already publish the same pages
+- [ ] Search Console connection for verification + ranking checks
