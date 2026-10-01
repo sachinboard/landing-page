@@ -12,7 +12,7 @@ const TITLE = "Google Reviews | The Board Company - Sign Board Makers in Bengalu
 const DESCRIPTION =
   "Read what cafe, restaurant, gym, school and office owners in Bengaluru say about our sign boards, installation and after-sales service.";
 
-export const Route = createFileRoute(PATH)({
+export const Route = createFileRoute("/google-reviews")({
   head: () => ({
     ...pageMeta({ title: TITLE, description: DESCRIPTION, path: PATH }),
     scripts: [

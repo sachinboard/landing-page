@@ -11,7 +11,7 @@ const TITLE = "Recent Sign Board Projects in Bengaluru | The Board Company";
 const DESCRIPTION =
   "Boards we have built and installed in Bengaluru, including work for Gold's Gym, Gilly's Super Bar, Grovies, D'Naples Pizza, Taste of Bihar and Fit24 Fitness Club.";
 
-export const Route = createFileRoute(PATH)({
+export const Route = createFileRoute("/recent-work")({
   head: () => ({
     ...pageMeta({ title: TITLE, description: DESCRIPTION, path: PATH }),
     scripts: [

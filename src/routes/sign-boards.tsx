@@ -39,7 +39,7 @@ const INCLUDED = [
   },
 ];
 
-export const Route = createFileRoute(PATH)({
+export const Route = createFileRoute("/sign-boards")({
   head: () => ({
     ...pageMeta({ title: TITLE, description: DESCRIPTION, path: PATH }),
     scripts: [

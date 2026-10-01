@@ -12,7 +12,7 @@ const TITLE = "Sign Board Questions Answered | The Board Company";
 const DESCRIPTION =
   "Customisation, manufacturing time, installation, pricing, warranty and service areas for sign boards in Bengaluru - answered by The Board Company.";
 
-export const Route = createFileRoute(PATH)({
+export const Route = createFileRoute("/faq")({
   head: () => ({
     ...pageMeta({ title: TITLE, description: DESCRIPTION, path: PATH }),
     scripts: [
