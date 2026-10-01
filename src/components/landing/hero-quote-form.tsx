@@ -24,7 +24,7 @@ export function HeroQuoteForm({
   idPrefix: p = "hero",
   location = "hero_form",
   showHeading = true,
-}: { idPrefix?: string; location?: string; showHeading?: boolean } = {}) {
+}: { idPrefix?: string; location?: "hero_form" | "quote_form"; showHeading?: boolean } = {}) {
   const navigate = useNavigate();
   const [values, setValues] = useState<Values>(EMPTY);
   const [accepted, setAccepted] = useState(true);
