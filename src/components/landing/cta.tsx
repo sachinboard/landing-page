@@ -29,9 +29,11 @@ export function QuoteButton({
   className?: string;
   children?: ReactNode;
 }) {
+  const quoteHref = useQuoteHref();
   return (
     <a
-      href="#quote"
+      href={quoteHref}
+
       onClick={() => trackEvent("cta_click", { cta: "get_a_free_quote", location })}
       className={cn(base, "bg-brand text-brand-foreground hover:bg-brand/85", className)}
     >

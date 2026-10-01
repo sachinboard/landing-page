@@ -11,7 +11,9 @@ const iconButton =
 
 /** Compact mobile-only action bar. Hidden on md+ where inline CTAs are visible. */
 export function StickyCta() {
+  const quoteHref = useQuoteHref();
   return (
+
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 px-3 py-2.5 backdrop-blur md:hidden">
       <div className="flex items-center gap-2">
         <a
@@ -35,8 +37,9 @@ export function StickyCta() {
           <Phone aria-hidden="true" className="size-5" />
         </a>
         <a
-          href="#quote"
+          href={quoteHref}
           onClick={() => trackEvent("cta_click", { cta: "get_a_free_quote", location: "sticky_bar" })}
+
           className="inline-flex h-12 flex-1 items-center justify-center rounded-md bg-brand px-3 text-sm font-bold text-brand-foreground"
         >
           Get a Free Quote
